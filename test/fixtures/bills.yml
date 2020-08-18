@@ -1,4 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: bills
+#
+#  id             :bigint           not null, primary key
+#  description    :string           not null
+#  category       :string           not null
+#  amount         :integer          not null
+#  split          :string           not null
+#  author_id      :integer          not null
+#  pay_partner_id :integer          not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
 
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
