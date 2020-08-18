@@ -1,0 +1,157 @@
+.login-errors {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  display: block;
+  background-color: #CC4455;
+  color: white;
+  font-size: 14px;
+  padding: 13px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.signup-errors {
+  background-color: #CC4455;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+}
+
+.signup-errors h3 {
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.signup-errors ul {
+  display: block;
+}
+
+.signup-errors li {
+  list-style-image: disc;
+  list-style-position: outside;
+  padding-left: 40px;
+  line-height: 22px;
+  display: list-item;
+}
+
+.signup-login-form-container {
+  display: flex;
+  margin: auto;
+  width: 620px;
+  margin-top: 30px;
+}
+
+.signup-login-form-container img {
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+}
+
+.signup-login-form-container a {
+  height: 250px;
+}
+
+.signup-form, .login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 20px 20px;
+  color: #333333;
+  width: 340px;
+}
+
+.signup-form form {
+  width: 100%;
+}
+
+.signup-form h1, .login-form h1 {
+ color: #999999;
+ font-weight: 700;
+ font-size: 16px;
+ padding: 10px 0 20px;
+}
+
+.signup-form h2 {
+  font-size: 24px;
+}
+
+.signup-form label, .login-form label {
+  font-size: 18px;
+}
+
+.signup-form strong {
+  font-weight: 700;
+}
+
+.signup-form-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  margin: 10px 0;
+}
+
+.signup-form-submit div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 50%;
+  color: #777777;
+}
+
+.signup-form input {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 0 5px 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.signup-form input:first-of-type {
+  font-size: 30px;
+  padding: 10px 5px;
+  margin: 0 0 20px;
+}
+
+.signup-form .orange-btn {
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px 15px;
+}
+
+.login-form .orange-btn {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 20px;
+}
+
+.signup-form-submit button:last-child {
+  padding: 5px;
+  height: 60%;
+  margin-top: 10px;
+}
+
+.signup-form-submit p {
+  display: block;
+  padding: 15px 10px;
+  color: #777777;
+  font-size: 14px;
+}
+
+.login-form input {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 0 5px 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

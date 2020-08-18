@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class LoginForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.renderErrors = this.renderErrors.bind(this)
   }
 
   handleSubmit(e) {
@@ -20,28 +22,39 @@ class LoginForm extends React.Component {
     return (e) => this.setState({[field]: e.currentTarget.value})
   }
 
+  componentDidMount() {
+    this.props.clearErrors()
+  }
+
   renderErrors() {
-    return this.props.errors.length === 0 ? (null) : (
-      <div className='error-messages'>
+    return(
+      <div className='login-errors'>
         <p>Whoops! We couldn't find an account for that email address and password. Please try again.</p>
+        <button onClick={() => this.props.clearErrors()}>x</button>
       </div>
     )
   }
 
   render() {
     return (
-      <div className="login-form">
-        {this.renderErrors()}
-        <h1>Welcome to SplitPies</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username
-            <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
-          </label>
-          <label>Password
-            <input type="password" onChange={this.handleChange('password')} value={this.state.password}/>
-          </label>
-          <button type='submit'>Log in</button>
-        </form>
+      <div className="signup-login-form-container">
+        { this.props.errors.length === 0 ? null : <div>{this.renderErrors()}</div> }
+        {/* <div className="login-errors">{this.renderErrors()}</div> */}
+        <Link to='/'><img src={window.logo} alt="splitpies logo" /></Link>
+        <div className='login-form'>
+          <h1>WELCOME TO SPLITPIES</h1>
+          <form onSubmit={this.handleSubmit}>
+            <label>Username</label>
+            <br/>
+              <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
+            <br/>
+            <label>Password</label>
+            <br/>
+              <input type="password" onChange={this.handleChange('password')} value={this.state.password}/>
+            <br/>
+            <button className="orange-btn" type='submit'>Log in</button>
+          </form>
+        </div>
       </div>
     )
   }

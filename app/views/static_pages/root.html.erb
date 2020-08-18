@@ -1,1 +1,12 @@
+<head>
+  <% if current_user %>
+    <script type="text/javascript">
+      window.currentUser = <%= render(
+        'api/users/user.json.jbuilder', 
+        user: current_user
+        ).html_safe %>
+    </script>
+  <% end %>
+</head>
+
 <main id='root'>Oh no! You broke it.</main>

@@ -10,7 +10,9 @@ class SignupForm extends React.Component {
       password: ''
     }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -22,10 +24,16 @@ class SignupForm extends React.Component {
     return (e) => this.setState({[field]: e.currentTarget.value})
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    const guestUser = {username: "guest", password: "password"}
+    this.props.login(guestUser)
+  }
+
   renderErrors() {
-    return this.props.errors.length === 0 ? (null) : (
-      <div className='error-messages'>
-        <h2>The following errors occurred:</h2>
+    return (
+      <div className='signup-errors'>
+        <h3>The following errors occurred:</h3>
         <ul>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
@@ -37,36 +45,48 @@ class SignupForm extends React.Component {
     )
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   render() {
+
     return (
-      <div className='signup-form-container'>
-        <Link to='/'>Logo</Link>
+      <div className='signup-login-form-container'>
+        <Link to='/'><img src={window.logo} alt="splitpies logo"/></Link>
         <div className='signup-form'>
-          <h1>Introduce Yourself</h1>
-          {this.renderErrors()}
+          <h1>INTRODUCE YOURSELF</h1>
+          {this.props.errors.length === 0 ? null : <div>{this.renderErrors()}</div>}
           <form onSubmit={this.handleSubmit}>
-            <label>Hi there! My username is
+            <label><h2>Hi there! My username is</h2></label>
+            <br/>
               <input 
                 type="text" 
                 onChange={this.handleChange('username')} 
                 value={this.state.username}
               />
-            </label>
-            <label>Here's my <strong>email address:</strong>
+              <br/>
+            <label>Here's my <strong>email address:</strong></label> 
+            <br/>
               <input 
                 type="text" 
                 onChange={this.handleChange('email')} 
                 value={this.state.email}
               />
-            </label>
-            <label>And here's my <strong>password:</strong>
+              <br/>
+            <label>And here's my <strong>password:</strong></label>
+            <br/>
               <input 
                 type="password" 
                 onChange={this.handleChange('password')} 
                 value={this.state.password}
               />
-            </label>
-            <button type='submit'>Sign me up!</button>
+              <br/>
+              <div className='signup-form-submit'>
+                <button className='orange-btn' type='submit'>Sign me up!</button>
+                <p>or</p>
+                <button onClick={this.demoLogin}>Sign in as guest</button>
+              </div>
           </form>
         </div>
       </div>

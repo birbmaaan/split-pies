@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  justify-content: space-between;
+  background-color: #5BC5A7;
+  color: white;
+}
+
+.navbar > a {
+  color: white;
+  padding: 15px 10px 10px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar-right {
+  display: flex;
+  padding: 10px;
+}
+
+.navbar-right ul {
+  display: flex;
+}
+
+.navbar-right .green-btn, .navbar-right button {
+  background-color: #5BC5A7;
+  border-color: #aaa;
+  color: white;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  padding: 5px 10px;
+}
+
+.navbar-right .orange-btn {
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: outset;
+  display: block;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.navbar-right p {
+  display: block;
+  padding: 7px 10px 5px;
+  font-size: 14px;
+}
