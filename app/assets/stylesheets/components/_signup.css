@@ -2,14 +2,28 @@
   position: absolute;
   top: 48px;
   left: 0;
-  width: 100%;
-  display: block;
+  width: calc(100% - 26px);
+  display: flex;
   background-color: #CC4455;
   color: white;
   font-size: 14px;
   padding: 13px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  justify-content: space-between;
+}
+
+.login-errors button {
+  background-color: #CC4455;
+  color: #dd97a0;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  border: none;
+}
+
+.login-errors button:hover {
+  color: white;
 }
 
 .signup-errors {
