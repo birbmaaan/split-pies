@@ -5,7 +5,7 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      name: '',
       email: '',
       password: ''
     }
@@ -26,7 +26,7 @@ class SignupForm extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    const guestUser = {username: "guest", password: "password"}
+    const guestUser = {email: "guest@demo.com", password: "password"}
     this.props.login(guestUser)
   }
 
@@ -58,12 +58,12 @@ class SignupForm extends React.Component {
           <h1>INTRODUCE YOURSELF</h1>
           {this.props.errors.length === 0 ? null : <div>{this.renderErrors()}</div>}
           <form onSubmit={this.handleSubmit}>
-            <label><h2>Hi there! My username is</h2></label>
+            <label><h2>Hi there! My name is</h2></label>
             <br/>
               <input 
                 type="text" 
-                onChange={this.handleChange('username')} 
-                value={this.state.username}
+                onChange={this.handleChange('name')} 
+                value={this.state.name}
               />
               <br/>
             <label>Here's my <strong>email address:</strong></label> 

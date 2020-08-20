@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom';
 import NavbarContainer from './navbar/navbar_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import { AuthRoute } from '../util/route_util';
+import DashboardContainer from './dashboard/dashboard_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
@@ -13,6 +14,8 @@ const App = () => (
 
     <AuthRoute path='/login' component={LoginFormContainer} />
     <AuthRoute path='/signup' component={SignupFormContainer} />
+    <Route path='/friends' component={DashboardContainer} />
+    <Route path='/dashboard' component={DashboardContainer} />
   </div>
 );
 

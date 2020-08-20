@@ -11,29 +11,30 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-  validates :username, :email, presence: true, uniqueness: true
-  validates :password_digest, :session_token, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :name, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6}, allow_nil: true
+  validates :registered, inclusion: {in: [true, false]}
   attr_reader :password
   after_initialize :ensure_session_token!
 
-  has_many :friend_lists,
+  has_many :friends_on_list,
   primary_key: :id,
   foreign_key: :user_id,
   class_name: :Friend
 
-  has_many :user_lists,
+  has_many :friends_of,
   primary_key: :id,
   foreign_key: :friend_id,
   class_name: :Friend
 
   has_many :friends,
-  through: :friend_lists,
-  source: :friend
+  through: :friends_of,
+  source: :friender
 
   has_many :frienders,
-  through: :user_lists,
-  source: :friender
+  through: :friends_on_list,
+  source: :friend
 
   has_many :bills,
   primary_key: :id,
@@ -54,8 +55,27 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Comment
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+  def self.create_temp_user(email)
+    temp_password = SecureRandom.urlsafe_base64
+    temp_user = User.new({email: email, registered: false, password: temp_password})
+    temp_user.save!
+    return temp_user
+  end
+
+  def switch_to_registered_friend
+    self.friends_on_list.each do |friend|
+      debugger
+      friend.pending = false
+      other_user = User.find_by(id: friend.friend_id)
+      pending_request = other_user.friends_on_list.find_by(friend_id: friend.user_id)
+      pending_request.pending = false
+      pending_request.save!
+      friend.save!
+    end
+  end
+
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
   end
 

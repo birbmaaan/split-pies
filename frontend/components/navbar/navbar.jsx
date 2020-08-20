@@ -5,7 +5,7 @@ class Navbar extends React.Component {
   render() {
     const menu = this.props.currentUser ? (
       <div className='navbar-right'>
-        <p>Hello {this.props.currentUser.username}</p>
+        <p>Hello {this.props.currentUser.name}</p>
         <button className='green-btn' onClick={this.props.logout}>Log out</button>
       </div>
     ) : (

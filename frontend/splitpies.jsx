@@ -5,6 +5,7 @@ import Root from './components/root'
 
 //TESTING IMPORTS
 import * as actions from './actions/session_actions'
+import { allFriends, addFriend, deleteFriend } from './actions/friend_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -26,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //TESTING AREA
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.signup = actions.signup;
-  window.logout = actions.logout;
-  window.login = actions.login;
+  window.allFriends = allFriends;
+  window.addFriend = addFriend;
+  window.deleteFriend = deleteFriend;
   //TESTING AREA
   
   ReactDOM.render(<Root store={store} />, root)

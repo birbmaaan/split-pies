@@ -5,7 +5,7 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: ''
     }
 
@@ -44,9 +44,9 @@ class LoginForm extends React.Component {
         <div className='login-form'>
           <h1>WELCOME TO SPLITPIES</h1>
           <form onSubmit={this.handleSubmit}>
-            <label>Username</label>
+            <label>Email</label>
             <br/>
-              <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
+              <input type="text" onChange={this.handleChange('email')} value={this.state.email}/>
             <br/>
             <label>Password</label>
             <br/>
