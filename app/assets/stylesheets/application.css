@@ -71,6 +71,7 @@ table {
   border-color: lightgray;
   display: block;
   padding: 10px;
+  font-family: 'Lato', sans-serif;
 }
 
 .orange-btn {
@@ -97,6 +98,9 @@ label {
   padding: 5px 0;
 }
 
+a {
+  color: #999999;
+}
 
 @import 'navbar.css';
 @import 'signup.css';

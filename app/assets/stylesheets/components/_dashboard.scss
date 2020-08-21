@@ -35,7 +35,7 @@ input::placeholder {
   font-weight: 400;
 }
 
-.add-friend-form button {
+.add-friend-form button, .friend-settings button {
   background-color: #EEEEEE;
   color: #333333;
   font-size: 12px;
@@ -43,6 +43,15 @@ input::placeholder {
   margin-left: 5px;
   margin-bottom: 5px;
   letter-spacing: 0.2px;
+}
+
+.friend-settings button {
+  background-image: linear-gradient(white, #ddd);
+}
+
+.add-friend-form button:hover, .friend-settings button:hover {
+  background-color: #e8e8e8;
+  background-image: none;
 }
 
 .friends-index {
@@ -67,7 +76,13 @@ input::placeholder {
   background-color: #5BC5A7;
   padding: 5px;
   font-size: 14px;
+  font-weight: 700;
   border: 1px solid gray;
+}
+
+.add-friend-form p {
+  font-size: 13px;
+  margin: 5px;
 }
 
 .dashboard-container h2 {
@@ -101,7 +116,35 @@ input::placeholder {
   margin: 0 15px;
   box-shadow:
   0 0 15px rgba(0,0,0,0.2);
- 
+}
+
+.dash-expenses {
+  display: flex;
+  margin: 30px;
+}
+
+.dash-expenses img {
+  width: 30%;
+  height: 275px;
+  margin: 20px;
+  border: 1px solid #ccc;
+
+}
+
+.dash-expenses div {
+  padding: 20px 5px 20px 20px;
+
+}
+
+.dash-expenses h1 {
+  font-size: 28px;
+  color: black;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.dash-expenses p {
+  font-size: 18px;
 }
 
 .main-content-right {
@@ -113,16 +156,30 @@ input::placeholder {
   justify-content: space-between;
   background-color: #EEEEEE;
   border-bottom: 1px solid #ddd ;
-  
 }
 
+.dash-content-header div {
+  display: flex;
+}
+
+.dash-content-header p {
+  background-color: #3a87ad;
+  color: white;
+  display: block;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 5px;
+  height: 12px;
+  margin-top: 25px;
+}
 .dash-content-header ul {
   display: flex;
 }
 
 .dash-content-header h1 {
   font-size: 24px;
-  padding: 20px;
+  padding: 20px 5px 20px 20px;
   color: black;
   font-weight: 700;
 }

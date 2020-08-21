@@ -9,7 +9,6 @@ class UserDash extends React.Component {
       <div className="dash-content-container">
         <section className="main-content-center">
           <DashHeader registered={this.props.user.registered} name={this.props.user.name}/>
-            The User Dash
           <DashExpensesContainer />
         </section>
 

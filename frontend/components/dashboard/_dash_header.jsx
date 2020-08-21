@@ -7,8 +7,10 @@ const DashHeader = (props) => {
 
   return (
     <div className="dash-content-header">
-      <h1>{props.name}</h1>
-      {pending}
+      <div>
+        <h1>{props.name}</h1>
+        {pending}
+      </div>
       <ul>
         <button className='orange-btn'>Add an expense</button>
         <button className='green-btn'>Settle up</button>

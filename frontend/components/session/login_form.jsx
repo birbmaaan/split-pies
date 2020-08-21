@@ -39,7 +39,6 @@ class LoginForm extends React.Component {
     return (
       <div className="signup-login-form-container">
         { this.props.errors.length === 0 ? null : <div>{this.renderErrors()}</div> }
-        {/* <div className="login-errors">{this.renderErrors()}</div> */}
         <Link to='/'><img src={window.logo} alt="splitpies logo" /></Link>
         <div className='login-form'>
           <h1>WELCOME TO SPLITPIES</h1>

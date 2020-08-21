@@ -24,7 +24,7 @@ class FriendDash extends React.Component {
         <section className="main-content-center">
           <DashHeader 
             name={this.props.friend.name}
-            registereed={this.props.friend.registered}
+            registered={this.props.friend.registered}
           />
         </section>
         <section className='main-content-right'>
