@@ -1,0 +1,1 @@
+json.extract! bill, :author_id, :pay_partner_id, :description, :category, :amount, :split 

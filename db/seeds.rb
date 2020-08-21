@@ -23,3 +23,30 @@ Friend.create(user_id: 3, friend_id: 1, pending: false)
 Friend.create(user_id: 4, friend_id: 1, pending: false)
 Friend.create(user_id: 5, friend_id: 1, pending: false)
 Friend.create(user_id: 6, friend_id: 1, pending: false)
+
+Bill.create(
+  description: "Food", 
+  category: "groceries", 
+  amount: 400, 
+  split: "1, 1",
+  author_id: 1,
+  pay_partner_id: 2,  
+)
+
+Bill.create(
+  description: "Drink", 
+  category: "groceries", 
+  amount: 1499, 
+  split: "1, 1",
+  author_id: 1,
+  pay_partner_id: 3,  
+)
+
+Bill.create(
+  description: "Sandwich", 
+  category: "groceries", 
+  amount: 1000, 
+  split: "0, 1",
+  author_id: 1,
+  pay_partner_id: 4,  
+)
