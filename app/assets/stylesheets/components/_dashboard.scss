@@ -1,0 +1,148 @@
+.dashboard-container {
+  display: flex;
+  color: #999999;
+}
+
+.dashboard-container a:visited {
+  color: #999999;
+}
+
+.main-content-left {
+  width: calc(20%-20px);
+  margin: 10px;
+}
+
+.main-content-left h1 {
+  padding: 0 0 10px;
+}
+
+.recent-activity p {
+  font-size: 14px;
+  padding: 5px;
+}
+
+.dashboard-container input {
+  padding: 3px;
+  color: #555555;
+  border-radius: 3px;
+  border: 1px solid #CCCCCC;
+  margin: 5px;
+}
+
+input::placeholder {
+  color: #aaa;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.add-friend-form button {
+  background-color: #EEEEEE;
+  color: #333333;
+  font-size: 12px;
+  padding: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  letter-spacing: 0.2px;
+}
+
+.friends-index {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px;
+}
+
+
+.friends-index li {
+  padding-bottom: 10px;
+}
+
+.add-friend-form div{
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.add-friend-form h1 {
+  color: white;
+  background-color: #5BC5A7;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid gray;
+}
+
+.dashboard-container h2 {
+  font-size: 11px;
+  background-color: #F6F6F6; 
+  color: #CCCCCC;
+}
+
+.dashbar-header {
+  display: flex;
+  background-color: #F6F6F6;
+  font-size: 11px;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.friends-header p {
+  font-weight: 700;
+}
+
+.dash-content-container {
+  width: 80%;
+  display: flex;
+}
+
+.main-content-center {
+  width: calc(74.938% - 30px);
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  margin: 0 15px;
+  box-shadow:
+  0 0 15px rgba(0,0,0,0.2);
+ 
+}
+
+.main-content-right {
+  width: 25.062%;
+}
+
+.dash-content-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #EEEEEE;
+  border-bottom: 1px solid #ddd ;
+  
+}
+
+.dash-content-header ul {
+  display: flex;
+}
+
+.dash-content-header h1 {
+  font-size: 24px;
+  padding: 20px;
+  color: black;
+  font-weight: 700;
+}
+
+.dash-content-header .orange-btn, .dash-content-header .green-btn {
+  margin: 10px 10px 10px 0;
+  font-size: 15px;
+  color: white;
+}
+
+.dash-content-header .green-btn {
+  background-color: #5BC5A7;
+}
+
+.main-content-right {
+  padding: 10px;
+}
+
+.main-content-right h1 {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 0;
+}

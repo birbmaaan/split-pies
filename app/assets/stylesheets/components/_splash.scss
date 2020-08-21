@@ -1,0 +1,32 @@
+.splash {
+  background-image: linear-gradient(#ffffff90, #ffffff90), image-url("background.jpg");
+  background-repeat: repeat;
+  background-size: 70px;
+}
+
+.splash-main {
+  background-color: #ffffff90;
+  width: 100%;
+}
+
+.splash-body {
+  width: 100%;
+  display: flex;
+  justify-items: left;
+}
+
+.splash-content {
+  background-image: linear-gradient(#1cc29ed8, #1cc29ed8);
+  width: 50%;
+  display: block;
+  color: white;
+}
+
+.splash-content h1 {
+  margin: auto;
+
+}
+
+.splash-footer {
+  background-color: white;
+}
