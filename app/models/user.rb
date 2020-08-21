@@ -11,7 +11,7 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
   validates :name, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6}, allow_nil: true
   validates :registered, inclusion: {in: [true, false]}
@@ -57,9 +57,13 @@ class User < ApplicationRecord
 
   def self.create_temp_user(email)
     temp_password = SecureRandom.urlsafe_base64
-    temp_user = User.new({email: email, registered: false, password: temp_password})
-    temp_user.save!
-    return temp_user
+    name = email.split('@').first
+    temp_user = User.new({name: name, email: email, registered: false, password: temp_password})
+    if temp_user.save
+      return temp_user
+    else
+      return ["Please enter a valid email address"]
+    end
   end
 
   def switch_to_registered_friend

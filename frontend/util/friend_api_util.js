@@ -14,13 +14,15 @@ export const allFriendUsers = () => {
   }))
 }
 
-export const friendRequest = friendInfo => (
+export const friendRequest = friendInfo => {
+  return (
   $.ajax({
     url: `/api/friends`,
     method: "POST",
     data: {friendInfo}
   })
-)
+  )
+}
 
 export const deleteFriend = friendId => {
   return (

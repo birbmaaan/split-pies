@@ -36,7 +36,9 @@ class FriendsIndex extends React.Component {
         </ul>
         <FriendForm 
           addFriend={this.props.addFriend}
-          userId={this.props.userId} 
+          userId={this.props.userId}
+          errors={this.props.errors}
+          clearErrors={this.props.clearErrors}
         />
       </div>
     )
