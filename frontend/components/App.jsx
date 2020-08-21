@@ -4,6 +4,7 @@ import NavbarContainer from './navbar/navbar_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
+import SplashContainer from './splash_page/splash_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -12,10 +13,11 @@ const App = () => (
       <NavbarContainer />
     </header>
 
+    <AuthRoute exact path='/' component={SplashContainer} />
     <AuthRoute path='/login' component={LoginFormContainer} />
     <AuthRoute path='/signup' component={SignupFormContainer} />
-    <Route path='/friends' component={DashboardContainer} />
-    <Route path='/dashboard' component={DashboardContainer} />
+    <ProtectedRoute path='/friends' component={DashboardContainer} />
+    <ProtectedRoute path='/dashboard' component={DashboardContainer} />
   </div>
 );
 

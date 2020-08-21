@@ -6,6 +6,14 @@ export const allFriends = (userId) => (
   })
 )
 
+export const allFriendUsers = () => {
+  return(
+    $.ajax({
+    url: `/api/users`,
+    method: 'GET',
+  }))
+}
+
 export const friendRequest = friendInfo => (
   $.ajax({
     url: `/api/friends`,
@@ -14,9 +22,26 @@ export const friendRequest = friendInfo => (
   })
 )
 
-export const deleteFriend = friendId => (
+export const deleteFriend = friendId => {
+  return (
   $.ajax({
     url: `/api/friends/${friendId}`,
-    method: "DELETE"
+    method: "DELETE",
+    data: {friendId}
+  })
+  )
+}
+
+export const findFriend = friendId => (
+  $.ajax({
+    url: `/api/users/${friendId}`,
+    method: 'GET'
+  })
+)
+
+export const findFriendAssoc = friendId => (
+  $.ajax({
+    url: `/api/friends/${friendId}`,
+    method: 'GET'
   })
 )

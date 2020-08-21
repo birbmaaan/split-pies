@@ -1,7 +1,7 @@
 class Api::FriendsController < ApplicationController
   def index
     user = User.find_by(id: params[:userId])
-    @friends = user.friends
+    @friends = user.friends_on_list
     render :index
   end
 
@@ -26,13 +26,18 @@ class Api::FriendsController < ApplicationController
     render :show
   end
 
-  def delete
-    @friend = Friend.find_by(id: params[:id])
+  def show
+    @friend = Friend.find_by(id: params[:friendId])
+    render :show
+  end
+
+  def destroy
+    @friend = Friend.find_by(id: params[:friendId])
     if @friend
-      other_friend = Friend.find_by(friend_id: @friend.user_id)
+      other_friend = Friend.all.where(user_id: @friend.friend_id).where(friend_id: @friend.user_id)
       @friend.destroy
-      other_friend.destroy
-      render `/api/users/#{@friend.user_id}`
+      other_friend.first.destroy
+      render :show
     else
       render json: ["Friend not found"], status: 404
     end

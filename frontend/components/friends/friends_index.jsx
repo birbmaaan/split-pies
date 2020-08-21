@@ -7,22 +7,32 @@ class FriendsIndex extends React.Component {
 
   componentDidMount() {
     this.props.allFriends(this.props.userId)
+    this.props.allFriendUsers(this.props.userId);
   }
 
   render() {
+    const friendUsers = []
+    this.props.users.forEach((user) => {
+      if (user.id !== this.props.userId) friendUsers.push(user); 
+    })
+
     return ( 
       <div className='friends-index-container'>
-        <div className='friends-header'> 
-          <h3>FRIENDS</h3>
-          <Link to='/'>+ add</Link>
+        <div className='dashbar-header'> 
+          <h2>FRIENDS</h2>
+          <p><Link to='/'>+ add</Link></p>
         </div>
         <ul className='friends-index'>
-          {this.props.friends.map((friend) => (
+          {friendUsers.map((friendUser) => {
+
+            return (
             <FriendIndexItem
-              key={friend.id}
-              friend={friend}
+              key={friendUser.id}
+              friendId={this.props.friends[friendUser.id]}
+              findFriend={this.props.findFriend}
+              friend={friendUser}
             />
-          ))}
+          )})}
         </ul>
         <FriendForm 
           addFriend={this.props.addFriend}

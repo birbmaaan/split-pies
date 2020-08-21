@@ -20,8 +20,13 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
-    render json: @users
+    user = User.find_by(id: current_user.id)
+    @users = user.friends
+    if @users 
+      render :index 
+    else
+      render json: [] 
+    end
   end
 
   private 

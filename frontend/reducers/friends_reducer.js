@@ -2,11 +2,11 @@ import { RECEIVE_FRIENDS, RECEIVE_FRIEND, REMOVE_FRIEND } from '../actions/frien
 
 const friendsReducer = (state = {}, action) => {
   Object.freeze()
-  
   let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_FRIENDS:
-      action.friends.forEach((friend) => {
+      const friendsList = Object.values(action.friends);
+      friendsList.forEach((friend) => {
         newState[friend.id] = friend
       })
       return newState;

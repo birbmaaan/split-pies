@@ -3,6 +3,7 @@ import * as friendApiUtil from '../util/friend_api_util';
 export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS';
 export const RECEIVE_FRIEND = 'RECEIVE_FRIEND';
 export const REMOVE_FRIEND = 'REMOVE_FRIEND';
+export const RECEIVE_FRIEND_USERS = 'RECEIVE_FRIEND_USERS';
 
 const receiveFriends = friends => {
   return ({
@@ -16,9 +17,14 @@ const receiveFriend = friend => ({
   friend
 })
 
-const removeFriend = friendId => ({
+const removeFriend = friend => ({
   type: REMOVE_FRIEND,
-  friendId
+  friend
+})
+
+const receiveFriendUsers = friends => ({
+  type: RECEIVE_FRIEND_USERS,
+  friends
 })
 
 export const addFriend = friendInfo => dispatch => (
@@ -28,10 +34,21 @@ export const addFriend = friendInfo => dispatch => (
 
 export const deleteFriend = friendId => dispatch => (
   friendApiUtil.deleteFriend(friendId)
-    .then(() => dispatch(removeFriend()))
+    .then((friend) => {
+      return (dispatch(removeFriend(friend)))})
 )
 
 export const allFriends = (userId) => dispatch => {
   return (friendApiUtil.allFriends(userId)
   .then(friends => dispatch(receiveFriends(friends))))
 }
+
+export const findFriend = (friendUserId) => dispatch => (
+  friendApiUtil.findFriend(friendUserId)
+    .then(friend => dispatch(receiveFriend(friend)))
+)
+
+export const allFriendUsers = (userId) => dispatch => (
+  friendApiUtil.allFriendUsers(userId)
+    .then(friends => dispatch(receiveFriendUsers(friends)))
+)

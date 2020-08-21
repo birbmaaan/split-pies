@@ -1,47 +1,42 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import FriendDashContainer from '../friends/friend_dash_container';
 import FriendsContainer from '../friends/friends_container';
+import UserDashContainer from './user_dash_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      friendId: ''
-    }
+
   }
 
   render() {
+    // debugger
+    // let friendUser = this.props.findFriend(this.state.friendId);
     return (
-    <div>
+    <div className='dashboard-container'>
       <section className="main-content-left">
+        <h1><Link to='/dashboard'>Dashboard</Link></h1>
         <div className="recent-activity">
-          <h1>Recent activity</h1>
-          <ul> 
-            <li>transactions</li>
-          </ul>
-          <h2>Filter by name</h2>
-          <h2>All expenses</h2>
+          <h1><Link to="/activity">Recent activity</Link></h1>
+          <input type="text" placeholder="Filter by name" />
+          <p>All expenses</p>
         </div>
 
-        <div className='groups'>
-          <h1>same formatting as friends</h1>
+        <div className='dashbar-header'>
+          <h2>GROUPS</h2>
         </div>
 
-        <FriendsContainer friendId={this.state.friendId}/>
+        <FriendsContainer />
       </section>
 
-      <section className='main-content-center'>
         <Switch>
-          {/* <Route path='/dashboard' component={DashboardContainer}/> */}
-          {/* <Route path={`/groups/${groupId}`} component={GroupDashContainer}/> */}
-          <Route path={`/groups/${this.state.friendId}`} component={FriendDashContainer}/>
+          <Route path='/dashboard' component={UserDashContainer}/>
+          <Route 
+            path={`/friends/:id`} 
+            component={FriendDashContainer}
+          />
         </Switch>
-      </section>
-
-      <section className="main-content-right">
-        <h1>GET SPLITWISE PRO!</h1>
-      </section>
     </div>
     )
   }
