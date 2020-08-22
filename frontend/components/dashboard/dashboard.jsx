@@ -3,6 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import FriendDashContainer from '../friends/friend_dash_container';
 import FriendsContainer from '../friends/friends_container';
 import UserDashContainer from './user_dash_container';
+import BillIndexContainer from '../bills/bill_index_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -11,8 +12,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    // debugger
-    // let friendUser = this.props.findFriend(this.state.friendId);
+
     return (
     <div className='dashboard-container'>
       <section className="main-content-left">
@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
         <div className="recent-activity">
           <h1><Link to="/activity">Recent activity</Link></h1>
           <input type="text" placeholder="Filter by name" />
-          <p>All expenses</p>
+          <p><Link to="/all">All expenses</Link></p>
         </div>
 
         <div className='dashbar-header'>
@@ -31,11 +31,9 @@ class Dashboard extends React.Component {
       </section>
 
         <Switch>
-          <Route path='/dashboard' component={UserDashContainer}/>
-          <Route 
-            path={`/friends/:id`} 
-            component={FriendDashContainer}
-          />
+          <Route path='/dashboard' component={UserDashContainer} />
+          <Route path={`/friends/:id`} component={FriendDashContainer} />
+          <Route path='/all' component={BillIndexContainer} />
         </Switch>
     </div>
     )
