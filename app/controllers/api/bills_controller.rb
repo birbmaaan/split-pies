@@ -1,6 +1,6 @@
 class Api::BillsController < ApplicationController
   def index
-    user = User.find_by(id: params[:authorId])
+    user = User.find_by(id: current_user.id)
     @bills = user.bills
     @bills.concat(user.co_bills)
     render :index
@@ -34,7 +34,13 @@ class Api::BillsController < ApplicationController
   end
 
   def destroy
-    @bill = Bill.find_
+    @bill = Bill.find_by(id: params[:id])
+    if @bill
+      @bill.destroy
+      render :show
+    else
+      render json: ['Transaction not found'], status: 404
+    end
 
   end
 
