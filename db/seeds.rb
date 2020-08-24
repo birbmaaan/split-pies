@@ -28,25 +28,40 @@ Bill.create(
   description: "Food", 
   category: "groceries", 
   amount: 400, 
-  split: "1, 1",
-  author_id: 1,
-  pay_partner_id: 2,  
-)
-
-Bill.create(
-  description: "Drink", 
-  category: "groceries", 
-  amount: 1499, 
-  split: "1, 1",
-  author_id: 1,
-  pay_partner_id: 3,  
+  partner_one_id: 1,
+  partner_two_id: 2,
+  split_equally: true,
+  partner_one_paid_share: 400,
+  partner_one_owed_share: 200,
+  partner_two_paid_share: 0,
+  partner_two_owed_share: 0,
+  paid_up: false 
 )
 
 Bill.create(
   description: "Sandwich", 
   category: "groceries", 
   amount: 1000, 
-  split: "0, 1",
-  author_id: 1,
-  pay_partner_id: 4,  
+  partner_one_id: 1,
+  partner_two_id: 4,
+  split_equally: false,
+  partner_one_paid_share: 1000,
+  partner_one_owed_share: 1000,
+  partner_two_paid_share: 0,
+  partner_two_owed_share: 0,
+  paid_up: false 
+)
+
+Bill.create(
+  description: "Drink", 
+  category: "groceries", 
+  amount: 1499, 
+  partner_one_id: 1,
+  partner_two_id: 3,
+  split_equally: true,
+  partner_one_paid_share: 1499,
+  partner_one_owed_share: 7495,
+  partner_two_paid_share: 7495,
+  partner_two_owed_share: 0,
+  paid_up: true
 )
