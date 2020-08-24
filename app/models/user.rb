@@ -38,12 +38,12 @@ class User < ApplicationRecord
 
   has_many :bills,
   primary_key: :id,
-  foreign_key: :author_id,
+  foreign_key: :partner_one_id,
   class_name: :Bill
 
   has_many :co_bills,
   primary_key: :id,
-  foreign_key: :pay_partner_id,
+  foreign_key: :partner_two_id,
   class_name: :Bill
 
   has_many :pay_partners, 

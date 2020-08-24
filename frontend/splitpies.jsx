@@ -4,8 +4,7 @@ import configureStore from './store/store'
 import Root from './components/root'
 
 //TESTING IMPORTS
-import * as actions from './actions/session_actions'
-import { allFriends, addFriend, deleteFriend } from './actions/friend_actions'
+import { allBills } from './actions/bill_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -27,9 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //TESTING AREA
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.allFriends = allFriends;
-  window.addFriend = addFriend;
-  window.deleteFriend = deleteFriend;
+  window.allBills = allBills;
   //TESTING AREA
   
   ReactDOM.render(<Root store={store} />, root)

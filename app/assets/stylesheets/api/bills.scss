@@ -1,3 +1,74 @@
 // Place all the styles related to the api/bills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bill-index-item {
+  background-color: #F8F8F8;
+  padding: 15px;
+  color: #333333;
+}
+
+.bill-index-item h1 {
+  font-size: 16px;
+}
+
+.bill-index-item p {
+  font-size: 13px;
+}
+
+.bill-index-item strong {
+  font-weight: 700;
+}
+
+.bill-index-item-info {
+  display: flex;
+  padding: 0 0 10px;
+}
+
+.bill-index-item-info img {
+  width: 86px;
+  height: 86px;
+  border: 1px solid black;
+  background: #aaa;
+}
+
+.bill-index-item-info > div {
+  padding: 5px 10px 0 10px;
+}
+
+.bill-index-item-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 2px 0 5px 0;
+}
+
+.bill-index-item-info p {
+  font-size: 12px;
+  color: #999999;
+  padding: 0 0 5px;
+}
+
+.bill-index-item-info .orange-btn {
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+.bill-index-item-breakdown  {
+  display: flex;
+  padding: 10px 0;
+}
+
+.bill-index-item-breakdown ul {
+  width: 50%;
+}
+
+.bill.index-item-breakdown > div {
+  width: 50%;
+}
+
+.bill-index-item-breakdown h1 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #999999;
+  padding: 0 0 5px;
+}

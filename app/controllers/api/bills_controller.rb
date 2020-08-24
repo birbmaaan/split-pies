@@ -2,7 +2,9 @@ class Api::BillsController < ApplicationController
   def index
     user = User.find_by(id: current_user.id)
     @bills = user.bills
-    @bills.concat(user.co_bills)
+    user.co_bills.each do |bill|
+      @bills.push(bill)
+    end
     render :index
   end
 
@@ -46,6 +48,9 @@ class Api::BillsController < ApplicationController
 
   private
   def bill_params
-    params.require(:bill).permit(:description, :category, :amount, :split, :author_id, :pay_partner_id)
+    params.require(:bill).permit( 
+      :description, :category, :amount, :split_equally, :partner_one_id, 
+      :partner_two_id, :partner_one_paid_share, :partner_two_paid_share, 
+      :partner_one_owed_share, :partner_two_owed_share)
   end
 end

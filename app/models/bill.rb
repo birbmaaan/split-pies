@@ -13,17 +13,19 @@
 #  updated_at     :datetime         not null
 #
 class Bill < ApplicationRecord
-  validates :description, :category, :amount, :split, presence: true
-  validates :author_id, :pay_partner_id, presence: true
+  validates :description, :category, :amount, presence: true
+  validates :partner_one_id, :partner_two_id, :partner_one_paid_share, :partner_two_paid_share, presence: true
+  validates :partner_one_owed_share, :partner_two_owed_share, presence: true
+  validates :split_equally, :paid_up, inclusion: {in: [true, false]}
 
-  belongs_to :author,
+  belongs_to :partner_one,
   primary_key: :id,
-  foreign_key: :author_id,
+  foreign_key: :partner_one_id,
   class_name: :User
 
-  belongs_to :pay_partner,
+  belongs_to :partner_two,
   primary_key: :id,
-  foreign_key: :pay_partner_id,
+  foreign_key: :partner_two_id,
   class_name: :User
 
   has_many :comments,

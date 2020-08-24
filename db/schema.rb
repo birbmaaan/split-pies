@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_195051) do
+ActiveRecord::Schema.define(version: 2020_08_23_225035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,18 @@ ActiveRecord::Schema.define(version: 2020_08_19_195051) do
     t.string "description", null: false
     t.string "category", null: false
     t.integer "amount", null: false
-    t.string "split", null: false
-    t.integer "author_id", null: false
-    t.integer "pay_partner_id", null: false
+    t.integer "partner_one_id", null: false
+    t.integer "partner_two_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_bills_on_author_id"
-    t.index ["pay_partner_id"], name: "index_bills_on_pay_partner_id"
+    t.boolean "split_equally", null: false
+    t.string "partner_one_paid_share", null: false
+    t.string "partner_one_owed_share", null: false
+    t.string "partner_two_paid_share", null: false
+    t.string "partner_two_owed_share", null: false
+    t.boolean "paid_up", null: false
+    t.index ["partner_one_id"], name: "index_bills_on_partner_one_id"
+    t.index ["partner_two_id"], name: "index_bills_on_partner_two_id"
   end
 
   create_table "comments", force: :cascade do |t|

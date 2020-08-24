@@ -32,7 +32,7 @@ export const clearBillErrors = () => ({
 
 export const allBills = () => dispatch => (
   billApi.allBills()
-    .then(bills => dispatch(receiveBills(bills)),
+    .then(bills => (dispatch(receiveBills(bills))),
     errors => dispatch(receiveBillErrors(errors)))
 )
 
