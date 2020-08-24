@@ -1,7 +1,6 @@
 import React from 'react';
 
 class BillIndexItem extends React.Component {
-
   render () {
     let billAuthor = this.props.bill.createdBy === this.props.partnerOne.id ? 
     this.props.partnerOne.name : this.props.partnerTwo.name ;

@@ -60,8 +60,8 @@ Bill.create(
   partner_two_id: 3,
   split_equally: true,
   partner_one_paid_share: 1499,
-  partner_one_owed_share: 7495,
-  partner_two_paid_share: 7495,
+  partner_one_owed_share: 749,
+  partner_two_paid_share: 750,
   partner_two_owed_share: 0,
   paid_up: true
 )
