@@ -125,10 +125,7 @@ input::placeholder {
 
 .dash-expenses img {
   width: 30%;
-  height: 275px;
   margin: 20px;
-  border: 1px solid #ccc;
-
 }
 
 .dash-expenses div {
@@ -145,6 +142,7 @@ input::placeholder {
 
 .dash-expenses p {
   font-size: 18px;
+  line-height: 1.4;
 }
 
 .main-content-right {
