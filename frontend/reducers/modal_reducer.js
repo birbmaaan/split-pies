@@ -7,7 +7,8 @@ const modalReducer = (state = null, action) => {
     case CLOSE_MODAL:
       return {}
     case OPEN_MODAL:
-      return action.formName;
+      let newState = Object.assign({}, {formName: action.formName, objectId: action.objectId})
+      return newState;
     default:
       return state;
   }

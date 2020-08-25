@@ -10,7 +10,7 @@ class Api::BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
-    if @bill.save
+    if @bill.save!
       render :show
     else
       render json: @bill.errors.full_messages, status: 402
@@ -51,6 +51,6 @@ class Api::BillsController < ApplicationController
     params.require(:bill).permit( 
       :description, :category, :amount, :split_equally, :partner_one_id, 
       :partner_two_id, :partner_one_paid_share, :partner_two_paid_share, 
-      :partner_one_owed_share, :partner_two_owed_share)
+      :partner_one_owed_share, :partner_two_owed_share, :paid_up)
   end
 end

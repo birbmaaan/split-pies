@@ -26,8 +26,6 @@ class Splash extends React.Component {
             <p>Split expenses with any group: trips, housemates, friends, and family.</p>
             <img src={window.asset2} alt="money money" />  
           </li>
-        </ul>
-        <ul className='splash-body'>
           <li className='splash-content-orange'>
               <h1>Add expenses easily</h1>
               <p>Quickly add expenses on the go before you forget who paid.</p>
@@ -39,7 +37,7 @@ class Splash extends React.Component {
             <img src={window.asset4} alt="money money" />
           </li>
         </ul>
-
+        
         <section className="splash-last">
 
         </section>
@@ -49,8 +47,6 @@ class Splash extends React.Component {
             <li>Add friends</li>
             <li>Split expenses</li>
             <li>Record debts</li>
-          </ul>
-          <ul>
             <li>Comment on expenses</li>
             <li>View all expenses</li>
             <li>View expenses between friends</li>

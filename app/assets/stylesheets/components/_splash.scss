@@ -59,6 +59,7 @@
   width: 100%;
   display: flex; 
   text-align: center;
+  flex-wrap: wrap
 }
 
 .splash-body li {
@@ -119,10 +120,11 @@
 .splash-footer ul {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .splash-footer li {
-  width: 33%;
+  width: calc(33% - 40px);
   font-size: 20px;
   padding: 0 20px 20px;
 }

@@ -4,18 +4,18 @@ import { connect } from 'react-redux';
 import NewBillContainer from './bills/new_bill_container';
 import EditBillContainer from './bills/edit_bill_container';
 
-function Modal({modal, closeModal}) {
+function Modal({modal}) {
   if (!modal) {
     return null;
   }
-
+  debugger
   let component;
-  switch (modal) {
+  switch (modal.formName) {
     case 'newBill':
       component = <NewBillContainer />;
       break;
     case 'editBill':
-      component = <EditBillContainer />;
+      component = <EditBillContainer billId={modal.objectId}/>;
       break;
     default:
       return null;
@@ -30,9 +30,11 @@ function Modal({modal, closeModal}) {
   )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => {
+  return ({
   modal: state.ui.modal,
 })
+}
 
 const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal())

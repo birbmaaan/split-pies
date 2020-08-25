@@ -4,21 +4,15 @@ import { calculateSplit, calculateTotal } from '../../util/bill_api_util';
 class BillForm extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      description: '',
-      amount: '',
-      category: '',
-      creatorId: '', 
-      split: '0.00',
-    }
+    this.state = this.props.bill;
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    this.props.processForm(this.state);
+    this.props.closeModal();
   }
 
   handleChange(field) {
@@ -31,7 +25,9 @@ class BillForm extends React.Component {
       const split = calculateSplit(e.currentTarget.value);
       that.setState({
       amount: e.currentTarget.value,
-      split: split
+      split: split,
+      partner_one_paid_share: e.currentTarget.value,
+      partner_one_owed_share: split,
     })
     } 
   }
@@ -42,6 +38,10 @@ class BillForm extends React.Component {
         <section className='modal-header'>
           <h1>{this.props.formType}</h1>
           <button onClick={this.props.closeModal}>x</button>
+        </section>
+        <section className="modal-user-selector">
+          <p>With you and: </p>
+          <input type="number" onChange={this.handleChange('partner_two_id')} value={this.state.partner_two_id}/>
         </section>
         <form onSubmit={this.handleSubmit} className="bill-form-modal">
           <div className="bill-form-inputs">

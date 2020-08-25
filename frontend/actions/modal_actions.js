@@ -5,9 +5,11 @@ export const closeModal = () => ({
   type: CLOSE_MODAL
 })
 
-export const openModal = formName => {
+export const openModal = (formName, objectId) => {
+  debugger
   return ({
   type: OPEN_MODAL,
-  formName
+  formName,
+  objectId,
   })
 }

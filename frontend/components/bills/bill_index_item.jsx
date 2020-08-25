@@ -15,7 +15,7 @@ class BillIndexItem extends React.Component {
             <h1>{this.props.bill.description}</h1>
             <h3>${parseFloat(this.props.bill.amount).toFixed(2)}</h3>
             <p>Added by {billAuthor} on {date}</p>
-            <button className="orange-btn">Edit expense</button>
+            <button className='orange-btn' onClick={() => this.props.openModal('editBill', this.props.bill.id)}>Edit expense</button>
           </div>
         </div>
         <div className='bill-index-item-breakdown'>

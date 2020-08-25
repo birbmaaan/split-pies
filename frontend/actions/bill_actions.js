@@ -36,11 +36,14 @@ export const allBills = () => dispatch => (
     errors => dispatch(receiveBillErrors(errors)))
 )
 
-export const createBill = bill => dispatch => (
+export const createBill = bill => dispatch => {
+  debugger
+  return (
   billApi.createBill(bill)
     .then(newBill => dispatch(receiveBill(newBill)),
     errors => dispatch(receiveBillErrors(errors)))
-)
+  )
+}
 
 export const updateBill = bill => dispatch => (
   billApi.updateBill(bill)
