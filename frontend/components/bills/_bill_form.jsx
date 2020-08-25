@@ -1,4 +1,5 @@
 import React from 'react';
+import { calculateSplit, calculateTotal } from '../../util/bill_api_util';
 
 class BillForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class BillForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.calculateSplit = this.calculateSplit.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,19 +24,16 @@ class BillForm extends React.Component {
   handleChange(field) {
     return (e) => this.setState({[field]: e.currentTarget.value})
   }
-
-  calculateSplit(e) {
-    debugger
-    let amount = (e.currentTarget.value);
-    let split = 0;
-    if (parseInt(amount, 10) !== NaN) {
-      amount = parseInt(amount, 10);
-      split = amount / 2
-    } else {
-      split = 0.00
-    }
-    const stringSplit = `$${split.to_s}`
-    this.setState({split: stringSplit, amount: e.currentTarget.value})
+  
+  handleAmount(amount) {
+    const that = this;
+    return (e) => {
+      const split = calculateSplit(e.currentTarget.value);
+      that.setState({
+      amount: e.currentTarget.value,
+      split: split
+    })
+    } 
   }
 
   render() {
@@ -46,13 +43,23 @@ class BillForm extends React.Component {
           <h1>{this.props.formType}</h1>
           <button onClick={this.props.closeModal}>x</button>
         </section>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChange("category")} value={this.state.category}/>
-          <input type="text" onChange={this.handleChange("description")} value={this.state.description} placeholder="Enter a description"/>
-          <br/>
-          <input type="text" onChange={this.handleChange("amount")} value={this.state.amount} placeholder="0.00"/>
-          <br/>
-          <p>Paid by you and split equally</p>
+        <form onSubmit={this.handleSubmit} className="bill-form-modal">
+          <div className="bill-form-inputs">
+            <select onChange={this.handleChange("category")} value={this.state.category}>
+              <option value="general">general</option>
+              <option value="food">food</option>
+              <option value="grocery">grocery</option>
+            </select>
+            <div className="bill-info">
+              <input type="text" onChange={this.handleChange("description")} value={this.state.description} placeholder="Enter a description"/>
+              <div className="amount-container">
+                <p>$</p>
+                <input type="text" onChange={this.handleAmount()} value={this.state.amount} placeholder="0.00"/>
+              </div>        
+            </div>
+          </div>
+
+          <p>Paid by you and split equally.</p>
           <p>(${this.state.split}/person)</p>
           <div className='modal-footer'>
             <button onClick={this.props.closeModal}>Cancel</button>

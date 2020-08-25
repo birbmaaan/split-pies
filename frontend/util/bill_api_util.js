@@ -38,7 +38,8 @@ export const deleteBill = billId => (
 )
 
 export const calculateSplit = (amount, split = 2) => {
-  const dollars = parseFloat(amount);
+  const dollars = parseFloat(amount)
+  if (isNaN(dollars)) return '0.00';
   const splitAmount = dollars / split;
   return splitAmount.toFixed(2).toString();
 }
