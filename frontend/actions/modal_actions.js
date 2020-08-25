@@ -6,7 +6,6 @@ export const closeModal = () => ({
 })
 
 export const openModal = (formName, objectId) => {
-  debugger
   return ({
   type: OPEN_MODAL,
   formName,

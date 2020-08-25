@@ -17,7 +17,7 @@ class Api::BillsController < ApplicationController
     end
   end
 
-  def edit
+  def update
     @bill = Bill.find_by(id: params[:id])
     if @bill.update(bill_params)
       render :show

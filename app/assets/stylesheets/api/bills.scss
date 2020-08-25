@@ -20,6 +20,29 @@
   font-weight: 700;
 }
 
+.bill-index-item-header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  box-shadow:
+  0 2px 5px rgba(0,0,0,0.2);
+  width: calc(100% + 10px);
+  margin-left: -15px;
+  padding: 10px;
+}
+
+.bill-index-item-header-right {
+  display: flex;
+}
+
+.bill-index-item-header-right h4 {
+  color: #aaa;
+  font-size: 12px;
+}
+
 .bill-index-item-info {
   display: flex;
   padding: 0 0 10px;

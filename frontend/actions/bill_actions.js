@@ -11,15 +11,21 @@ const receiveBills = bills => ({
   bills
 })
 
-const receiveBill = bill => ({
+const receiveBill = bill => {
+  debugger
+  return ({
   type: RECEIVE_BILL,
   bill
 })
+}
 
-const removeBill = billId => ({
+const removeBill = bill => {
+  debugger
+  return ({
   type: REMOVE_BILL,
-  billId
+  bill
 })
+}
 
 export const receiveBillErrors = errors => ({
   type: RECEIVE_BILL_ERRORS,
@@ -47,7 +53,7 @@ export const createBill = bill => dispatch => {
 
 export const updateBill = bill => dispatch => (
   billApi.updateBill(bill)
-    .then(newBill => dispatch(receiveBill(bill)),
+    .then(newBill => dispatch(receiveBill(newBill)),
     errors => dispatch(receiveBillErrors(errors)))
 )
 

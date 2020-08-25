@@ -11,6 +11,7 @@ class BillIndex extends React.Component {
   }
 
   renderBalance() {
+    debugger
     const total = this.props.calculateTotal(this.props.bills, this.props.userId);
     if (total > 0) {
       return (

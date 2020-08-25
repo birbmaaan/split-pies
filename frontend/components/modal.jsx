@@ -8,7 +8,7 @@ function Modal({modal}) {
   if (!modal) {
     return null;
   }
-  debugger
+
   let component;
   switch (modal.formName) {
     case 'newBill':

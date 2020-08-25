@@ -48,6 +48,7 @@ export const calculateTotal = (bills, userId) => {
   let total = 0;
   const that = this;
   bills.forEach((bill) => {
+    debugger
     if (userId === bill.partners[0].userId) {
       total += parseFloat(bill.partners[0].netBalance)
     } else {
@@ -60,4 +61,8 @@ export const calculateTotal = (bills, userId) => {
 
 export const convertToFloat = (amount) => {
   return amount.toFloat.toFixed(2);
+}
+
+export const ensureDecimal = (amount) => {
+  return parseFloat(amount).toFixed(2).toString()
 }

@@ -1,3 +1,5 @@
 @bills.each do |bill|
-    json.partial! '/api/bills/bill', bill: bill
+    json.set! bill.id do
+        json.partial! '/api/bills/bill', bill: bill
+    end
 end
