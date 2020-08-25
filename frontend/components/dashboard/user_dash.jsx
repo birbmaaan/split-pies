@@ -8,7 +8,11 @@ class UserDash extends React.Component {
     return(
       <div className="dash-content-container">
         <section className="main-content-center">
-          <DashHeader registered={this.props.user.registered} name={this.props.user.name}/>
+          <DashHeader
+            registered={this.props.user.registered} 
+            name={this.props.user.name}
+            openModal={this.props.openModal}  
+          />
           <DashExpensesContainer />
         </section>
 

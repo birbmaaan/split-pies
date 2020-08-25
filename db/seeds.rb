@@ -27,12 +27,12 @@ Friend.create(user_id: 6, friend_id: 1, pending: false)
 Bill.create(
   description: "Food", 
   category: "groceries", 
-  amount: 400, 
+  amount: 4.00, 
   partner_one_id: 1,
   partner_two_id: 2,
   split_equally: true,
-  partner_one_paid_share: 400,
-  partner_one_owed_share: 200,
+  partner_one_paid_share: 4.00,
+  partner_one_owed_share: 2.00,
   partner_two_paid_share: 0,
   partner_two_owed_share: 0,
   paid_up: false 
@@ -41,12 +41,12 @@ Bill.create(
 Bill.create(
   description: "Sandwich", 
   category: "groceries", 
-  amount: 1000, 
+  amount: 10.00, 
   partner_one_id: 1,
   partner_two_id: 4,
   split_equally: false,
-  partner_one_paid_share: 1000,
-  partner_one_owed_share: 1000,
+  partner_one_paid_share: 10.00,
+  partner_one_owed_share: 10.00,
   partner_two_paid_share: 0,
   partner_two_owed_share: 0,
   paid_up: false 
@@ -55,13 +55,13 @@ Bill.create(
 Bill.create(
   description: "Drink", 
   category: "groceries", 
-  amount: 1499, 
+  amount: 14.99, 
   partner_one_id: 1,
   partner_two_id: 3,
   split_equally: true,
-  partner_one_paid_share: 1499,
-  partner_one_owed_share: 749,
-  partner_two_paid_share: 750,
+  partner_one_paid_share: 14.99,
+  partner_one_owed_share: 7.49,
+  partner_two_paid_share: 7.50,
   partner_two_owed_share: 0,
   paid_up: true
 )

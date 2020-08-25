@@ -1,22 +1,35 @@
 import React from 'react';
+import { openModal } from '../../actions/modal_actions';
+import { connect } from 'react-redux';
 
-const DashHeader = (props) => {
-  const pending = props.registered ? null : (
-    <p>invite pending</p>
-  )
+class DashHeader extends React.Component {
 
-  return (
-    <div className="dash-content-header">
-      <div>
-        <h1>{props.name}</h1>
-        {pending}
+  render() {
+    const pending = this.props.registered ? null : (
+      <p>invite pending</p>
+    )
+    return (
+      <div className="dash-content-header">
+        <div>
+          <h1>{this.props.name}</h1>
+          {pending}
+        </div>
+        <ul>
+          <button className='orange-btn' onClick={() => this.props.openModal('newBill')}>Add an expense</button>
+          <button className='green-btn'>Settle up</button>
+        </ul>
       </div>
-      <ul>
-        <button className='orange-btn'>Add an expense</button>
-        <button className='green-btn'>Settle up</button>
-      </ul>
-    </div>
-  )
+    )
+  }
 }
 
-export default DashHeader;
+const mapStateToProps = (state, ownProps) => ({
+  name: ownProps.name,
+  registered: ownProps.registered,
+})
+
+const mapDispatchToProps = dispatch => ({
+  openModal: modal => dispatch(openModal(modal))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashHeader);

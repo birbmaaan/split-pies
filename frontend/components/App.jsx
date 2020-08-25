@@ -6,9 +6,11 @@ import SignupFormContainer from './session/signup_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import SplashContainer from './splash_page/splash_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Modal from './modal';
 
 const App = () => (
   <div>
+    <Modal />
     <header>
       <NavbarContainer />
     </header>

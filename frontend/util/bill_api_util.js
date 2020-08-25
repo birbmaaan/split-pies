@@ -36,3 +36,27 @@ export const deleteBill = billId => (
     data: {billId}
   })
 )
+
+export const calculateSplit = (amount, split = 2) => {
+  const dollars = parseFloat(amount);
+  const splitAmount = dollars / split;
+  return splitAmount.toFixed(2).toString();
+}
+
+export const calculateTotal = (bills, userId) => {
+  let total = 0;
+  const that = this;
+  bills.forEach((bill) => {
+    if (userId === bill.partners[0].userId) {
+      total += parseFloat(bill.partners[0].netBalance)
+    } else {
+      total += parseFloat(bill.partners[1].netBalance)
+    }
+  })
+  if (total === 0) return null;
+  return total.toFixed(2).toString();
+}
+
+export const convertToFloat = (amount) => {
+  return amount.toFloat.toFixed(2);
+}

@@ -10,22 +10,8 @@ class BillIndex extends React.Component {
     // this.renderBalance = this.renderBalance.bind(this);
   }
 
-  calculateTotal() {
-    let total = 0;
-    const that = this;
-    this.props.bills.forEach((bill) => {
-      if (that.props.userId === bill.partners[0].userId) {
-        total += parseInt(bill.partners[0].netBalance, 10)
-      } else {
-        total += parseInt(bill.partners[1].netBalance, 10)
-      }
-    })
-    if (total === 0) total = null;
-    return (total / 10).toFixed(2);
-  }
-
   renderBalance() {
-    const total = this.calculateTotal();
+    const total = this.props.calculateTotal(this.props.bills, this.props.userId);
     if (total > 0) {
       return (
         <div className='cash-money'>

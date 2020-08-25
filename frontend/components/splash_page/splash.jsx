@@ -1,36 +1,45 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Splash extends React.Component {
 
   render() {
     return (
-      <div className='splash'>This is the splash page
+      <div className='splash'>
 
         <section className="splash-main"> 
-
+          <div>
+            <h1>Less stress when sharing expenses</h1>
+            <p>Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.</p>
+            <button><Link to='/signup'>Sign up</Link></button>
+          </div>
+          <img src={window.pie} alt="have your pie and eat it too" />
         </section>
-        <section className="splash-body">
-          <section className='splash-content'>
+        <ul className='splash-body'>
+          <li className='splash-content-black'>
               <h1>Track balances</h1>
               <p>Keep track of shared expenses, balances, and who owes who.</p>
-              <img src="" alt="phone photo"/>
-          </section>
-          <section className='splash-content'>
+            <img src={window.money} alt="money money" />
+          </li>
+          <li className='splash-content-green'>
               <h1>Organize expenses</h1>
             <p>Split expenses with any group: trips, housemates, friends, and family.</p>
-              <img src="" alt="phone photo"/>
-          </section>
-          <section className='splash-content'>
+            <img src={window.money} alt="money money" />  
+          </li>
+        </ul>
+        <ul className='splash-body'>
+          <li className='splash-content-orange'>
               <h1>Add expenses easily</h1>
               <p>Quickly add expenses on the go before you forget who paid.</p>
-              <img src="" alt="phone photo"/>
-          </section>
-          <section className='splash-content'>
+            <img src={window.money} alt="money money" />
+          </li>
+          <li className='splash-content-black'>
               <h1>Pay friends back</h1>
               <p>Settle up with a friend and record any cash or online payment.</p>
-              <img src="" alt="phone photo"/>
-          </section>
-        </section>
+            <img src={window.money} alt="money money" />
+          </li>
+        </ul>
+
         <section className="splash-last">
 
         </section>
