@@ -15,15 +15,15 @@ class BillIndexItem extends React.Component {
             <p>{this.props.bill.description}</p>
           </div>
           <div className='bill-index-item-header-right'>
-            <div>
+            <div className="bill-index-item-header-paid">
               <h4>you paid</h4>
               <p>${parseFloat(this.props.bill.amount).toFixed(2)}</p>
             </div>
-            <div>
-              <h4>you lent your friend</h4>
+            <div className="bill-index-item-header-lent">
+              <h4>you lent {this.props.partnerTwo.name}</h4>
               <p>${parseFloat(this.props.firstPay.owedShare).toFixed(2)}</p>
             </div>
-            <button onClick={() => this.props.deleteBill(this.props.bill.id)}>Delete expense</button>
+            <button onClick={() => this.props.deleteBill(this.props.bill.id)}>x</button>
           </div>
         </div>
 
