@@ -19,24 +19,24 @@ class Splash extends React.Component {
           <li className='splash-content-black'>
               <h1>Track balances</h1>
               <p>Keep track of shared expenses, balances, and who owes who.</p>
-            <img src={window.money} alt="money money" />
+            <img src={window.asset1} alt="money money" />
           </li>
           <li className='splash-content-green'>
               <h1>Organize expenses</h1>
             <p>Split expenses with any group: trips, housemates, friends, and family.</p>
-            <img src={window.money} alt="money money" />  
+            <img src={window.asset2} alt="money money" />  
           </li>
         </ul>
         <ul className='splash-body'>
           <li className='splash-content-orange'>
               <h1>Add expenses easily</h1>
               <p>Quickly add expenses on the go before you forget who paid.</p>
-            <img src={window.money} alt="money money" />
+            <img src={window.asset3} alt="money money" />
           </li>
           <li className='splash-content-black'>
               <h1>Pay friends back</h1>
               <p>Settle up with a friend and record any cash or online payment.</p>
-            <img src={window.money} alt="money money" />
+            <img src={window.asset4} alt="money money" />
           </li>
         </ul>
 

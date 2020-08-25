@@ -65,6 +65,8 @@
   display: block;
   color: white;
   width: 50%;
+  position: relative;
+  min-height: 641px;
 }
 
 .splash-content-black {
@@ -95,12 +97,9 @@
 
 .splash-body img {
   margin-top: 25px;
-  width: 50%;
-  border: 2px solid white;
-  border-bottom: none;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  margin-bottom: -3px;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 162px);
 }
 
 .splash-footer {
