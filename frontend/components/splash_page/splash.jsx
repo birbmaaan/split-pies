@@ -44,11 +44,16 @@ class Splash extends React.Component {
 
         </section>
         <footer className='splash-footer'>
-          <h1>The whole nine yards</h1>
+          <h1>The whole pie farm</h1>
           <ul>
-            <li>Add groups and friends</li>
-            <li>Split expenses, record debts</li>
-            <li>et cetera</li>
+            <li>Add friends</li>
+            <li>Split expenses</li>
+            <li>Record debts</li>
+          </ul>
+          <ul>
+            <li>Comment on expenses</li>
+            <li>View all expenses</li>
+            <li>View expenses between friends</li>
           </ul>
         </footer>
       </div>
