@@ -12,7 +12,7 @@ const receiveBills = bills => ({
 })
 
 const receiveBill = bill => {
-  debugger
+  
   return ({
   type: RECEIVE_BILL,
   bill
@@ -20,7 +20,7 @@ const receiveBill = bill => {
 }
 
 const removeBill = bill => {
-  debugger
+  
   return ({
   type: REMOVE_BILL,
   bill
