@@ -7,9 +7,9 @@ import { calculateSplit, calculateTotal, convertToFloat } from '../../util/bill_
 const mapStateToProps = (state, ownProps) => {
   const friendId = ownProps.friendId ? ownProps.friendId : null;
   const friend = ownProps.friend ? ownProps.friend : null;
-
+  const key = friendId ? friendId : state.session.id;
   return ({
-  key: friendId,
+  // key: friendId,
   bills: Object.values(state.entities.bills),
   userId: state.session.id,
   friendId: friendId,

@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
+    key: ownProps.match.params.id,
     friend: state.entities.users[ownProps.match.params.id],
     userId: state.session.id,
     friendAssocs: state.entities.friends

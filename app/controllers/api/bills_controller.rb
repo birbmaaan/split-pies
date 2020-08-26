@@ -8,7 +8,6 @@ class Api::BillsController < ApplicationController
   end
 
   def create
-    debugger
     @bill = Bill.new(bill_params)
     if @bill.save!
       render :show

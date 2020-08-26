@@ -10,6 +10,7 @@ const billsReducer = (state = {}, action) => {
       newState[action.bill.id] = action.bill;
       return newState;
     case REMOVE_BILL:
+      debugger
       delete newState[action.bill.id]
       return newState;
     default:
