@@ -6,6 +6,18 @@ class BillIndexItem extends React.Component {
     let billAuthor = this.props.bill.createdBy === this.props.partnerOne.id ? 
     this.props.partnerOne.name : this.props.partnerTwo.name ;
     let date = this.props.bill.createdAt;
+    let payer;
+    let borrower;
+    let amountLent;
+    if (this.props.userId === this.props.partnerOne.id) {
+      payer = 'you';
+      borrower = this.props.partnerTwo.name;
+      amountLent = (<p className="cash-money">${parseFloat(this.props.firstPay.owedShare).toFixed(2)}</p>)
+    } else {
+      payer = this.props.partnerOne.name;
+      borrower = 'you';
+      amountLent = (<p className="in-the-red">${parseFloat(this.props.firstPay.owedShare).toFixed(2)}</p>)
+    }
 
     return (
       <div className="bill-index-item">
@@ -16,12 +28,12 @@ class BillIndexItem extends React.Component {
           </div>
           <div className='bill-index-item-header-right'>
             <div className="bill-index-item-header-paid">
-              <h4>you paid</h4>
+              <h4>{payer} paid</h4>
               <p>${parseFloat(this.props.bill.amount).toFixed(2)}</p>
             </div>
             <div className="bill-index-item-header-lent">
-              <h4>you lent {this.props.partnerTwo.name}</h4>
-              <p>${parseFloat(this.props.firstPay.owedShare).toFixed(2)}</p>
+              <h4>{payer} lent {borrower}</h4>
+              {amountLent}
             </div>
             <button onClick={() => this.props.deleteBill(this.props.bill.id)}>x</button>
           </div>

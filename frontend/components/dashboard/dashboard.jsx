@@ -34,6 +34,7 @@ class Dashboard extends React.Component {
           <Route path='/dashboard' component={UserDashContainer} />
           <Route path={`/friends/:id`} component={FriendDashContainer} />
           <Route path='/all' component={BillIndexContainer} />
+          <Route path='/activity' component={BillIndexContainer} />
         </Switch>
     </div>
     )

@@ -1,7 +1,5 @@
 import React from 'react';
-import FriendSettingsContainer from './friend_settings_container';
-import DashHeader from '../dashboard/_dash_header';
-import { withRouter } from 'react-router-dom'
+import BillIndexContainer from '../bills/bill_index_container';
 
 class FriendDash extends React.Component {
   componentDidMount() {
@@ -19,20 +17,9 @@ class FriendDash extends React.Component {
       }
     }))
     }
+    debugger
     return (
-      <div className="dash-content-container">
-        <section className="main-content-center">
-          <DashHeader 
-            name={this.props.friend.name}
-            registered={this.props.friend.registered}
-          />
-        </section>
-        <section className='main-content-right'>
-          <h1>YOUR BALANCE</h1>
-          <p>You are all settled up</p>
-          <FriendSettingsContainer friendId={friendAssocId} />
-        </section>
-      </div>
+      <BillIndexContainer friend={this.props.friend} friendId={this.props.friend.id} />
     )
   }
 }

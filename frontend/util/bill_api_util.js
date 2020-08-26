@@ -58,10 +58,22 @@ export const calculateTotal = (bills, userId) => {
   return total.toFixed(2).toString();
 }
 
-export const convertToFloat = (amount) => {
-  return amount.toFloat.toFixed(2);
-}
-
 export const ensureDecimal = (amount) => {
   return parseFloat(amount).toFixed(2).toString()
+}
+
+export const setPartnerOne = (currentUser, friend, payer) => {
+  if (payer) {
+    return currentUser.id
+  } else {
+    return friend.id
+  }
+}
+
+export const setPartnerTwo = (currentUser, friend, payer) => {
+  if (!payer) {
+    return friend.id
+  } else {
+    return currentUser.id
+  }
 }

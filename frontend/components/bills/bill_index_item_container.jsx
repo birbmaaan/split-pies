@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   partnerTwo: state.entities.users[ownProps.bill.partners[1].userId],
   secondPay: ownProps.bill.partners[1],
   bill: ownProps.bill,
+  userId: state.session.id
 })
 }
 

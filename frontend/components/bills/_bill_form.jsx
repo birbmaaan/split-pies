@@ -1,5 +1,5 @@
 import React from 'react';
-import { calculateSplit, calculateTotal } from '../../util/bill_api_util';
+import { calculateSplit, calculateTotal, setPartnerOne, setPartnerTwo } from '../../util/bill_api_util';
 import Autocomplete from '../autocomplete';
 
 class BillForm extends React.Component {
@@ -35,30 +35,35 @@ class BillForm extends React.Component {
     } 
   }
 
+  switchPartners() {
+    if (this.state.payer === this.props.userId) {
+      this.setState({
+        partner_one_id: this.props.userId,
+        partner_two_id: selectedUser.id,
+      })
+    } else {
+      this.setState({
+        partner_one_id: selectedUser.id,
+        partner_two_id: this.props.userId,
+      })
+    }
+  }
+
   possibleName(name) {
     return name.indexOf(this.state.friendName) >= 0;
   }
 
   setToName(name) {
-    debugger
     let selectedUser;
     this.props.friends.forEach((user) => {
       if (user.name === name) selectedUser = user;
     })
 
-    if (selectedUser.id === this.props.userId) {
-      this.setState({
-        partner_one_id: selectedUser.id,  
-        partner_two_id: this.props.userId,
-        friend: selectedUser
-      });
-    } else {
-        this.setState({
-          partner_two_id: selectedUser.id,  
-          partner_one_id: this.props.userId,
-          friend: selectedUser
-        });
-    }
+    this.setState({
+      partner_one_id: this.props.userId,
+      partner_two_id: selectedUser.id,  
+      friend: selectedUser
+    });
     const input = document.getElementById('autofill');
     input.value = name;
   }

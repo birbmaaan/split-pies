@@ -1,14 +1,19 @@
 import React from 'react';
 import DashHeader from '../dashboard/_dash_header';
 import BillIndexItemContainer from './bill_index_item_container';
+import FriendSettingsContainer from '../friends/friend_settings_container';
+import RightColumn from '../dashboard/right_column';
 
 class BillIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.state = ({
+      bills: this.props.bills
+    })
   }
 
   renderBalance() {
-    let total = this.props.calculateTotal(this.props.bills, this.props.userId);
+    let total = this.props.calculateTotal(this.state.bills, this.props.userId);
     debugger
     if (total > 0) {
       return (
@@ -32,30 +37,80 @@ class BillIndex extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.allBills()
+  limitToFriendBills() {
+    const that = this;
+    let friendBills = [];
+    this.props.bills.forEach((bill) => {
+      if (bill.partners[0].userId === that.props.friendId || 
+          bill.partners[1].userId === that.props.friendId) {
+        friendBills.push(bill);
+      }
+    })
+    this.setState({bills: friendBills})
   }
 
+  componentDidMount() {
+    if (this.props.friendId) {
+      this.props.allBills().then(() => this.limitToFriendBills());
+    } else {
+      this.props.allBills();
+    }
+  }
+  
   render() {
-    if (this.props.bills.length === 0) return null;
-    const balance = this.renderBalance();
-    return (
-      <div className="dash-content-container">
+    let name;
+    let registered;
+    if (this.props.friend) {
+      name = this.props.friend.name;
+      registered = this.props.friend.registered;
+    } else {
+      name = 'All expenses';
+      registered = true;
+    }
+    const centerContent = this.state.bills.length === 0 ? (
         <section className="main-content-center">
           <DashHeader
-            name={"All expenses"}
-            registered={true}
+            name={name}
+            registered={registered}
           />
-          <ul>
-            {this.props.bills.map(((bill) => (
-              <BillIndexItemContainer bill={bill} key={bill.id} />
-            )))}
-          </ul>
+          <div className="dash-expenses">
+            <img src={window.nobill} alt="all paid up!" />
+            <div>
+              <h1>You have not added any expenses yet</h1>
+              <p>To add a new expense, click the orange "Add an expense" button.</p>
+            </div>
+          </div>
         </section>
-        <section className='main-content-right'>
-          <h1>YOUR TOTAL BALANCE</h1>
-          {balance}
-        </section>
+    ) : (
+      <section className="main-content-center">
+        <DashHeader
+          name={name}
+          registered={registered}
+        />
+        <ul>
+          {this.state.bills.map(((bill) => (
+            <BillIndexItemContainer bill={bill} key={bill.id} />
+          )))}
+        </ul>
+      </section>
+    )
+    debugger
+    const balance = this.renderBalance();
+
+    const friendSettings = this.props.friendId ? (
+      <FriendSettingsContainer friendId={this.props.friendId} />
+    ) : (
+      null
+    )
+
+    return (
+      <div className="dash-content-container">
+        {centerContent}
+        <RightColumn 
+            bills={this.state.bills} 
+            userId={this.props.userId}
+            friendId={this.props.friendId}
+            calculateTotal={this.props.calculateTotal}/>
       </div>
     )
   }

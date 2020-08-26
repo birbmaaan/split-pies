@@ -21,6 +21,7 @@ const App = () => (
     <ProtectedRoute path='/friends' component={DashboardContainer} />
     <ProtectedRoute path='/dashboard' component={DashboardContainer} />
     <ProtectedRoute path='/all' component={DashboardContainer} />
+    <ProtectedRoute path='/activity' component={DashboardContainer} />
   </div>
 );
 
