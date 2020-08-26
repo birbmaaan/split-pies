@@ -14,11 +14,11 @@ class Comment < ApplicationRecord
 
   belongs_to :bill,
   primary_key: :id,
-  foreign_key: :author_id,
-  class_name: :User
+  foreign_key: :bill_id,
+  class_name: :Bill
 
   belongs_to :author,
   primary_key: :id,
-  foreign_key: :bill_id,
-  class_name: :Bill
+  foreign_key: :author_id,
+  class_name: :User
 end

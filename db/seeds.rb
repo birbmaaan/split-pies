@@ -68,3 +68,46 @@ Bill.create(
   partner_two_owed_share: '7.49',
   paid_up: true
 )
+
+
+Comment.create(
+  content: "Thanks!",
+  author_id: 1,
+  bill_id: 1,
+)
+
+Comment.create(
+  content: "No no, thank you.",
+  author_id: 2,
+  bill_id: 1,
+)
+
+Comment.create(
+  content: "I loved it",
+  author_id: 3,
+  bill_id: 3,
+)
+
+Comment.create(
+  content: "No for real, it was great",
+  author_id: 3,
+  bill_id: 3,
+)
+
+Comment.create(
+  content: "Glad you thought so",
+  author_id: 1,
+  bill_id: 3,
+)
+
+Comment.create(
+  content: "Bless. I gotchu next time",
+  author_id: 1,
+  bill_id: 2,
+)
+
+Comment.create(
+  content: "I gotchu fam",
+  author_id: 3,
+  bill_id: 2,
+)

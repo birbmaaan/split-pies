@@ -1,0 +1,1 @@
+json.extract! comment, :id, :user_id, :bill_id, :content
