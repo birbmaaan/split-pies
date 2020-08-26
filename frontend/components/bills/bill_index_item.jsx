@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class BillIndexItem extends React.Component {
 
@@ -66,6 +67,7 @@ class BillIndexItem extends React.Component {
             <div>
               <h1>SPENDING BY CATEGORY</h1>
               <h1>NOTES AND COMMENTS</h1>
+              <CommentIndexContainer bill={this.props.bill}/>
             </div>
           </div>
         </div>

@@ -14,7 +14,6 @@ class BillIndex extends React.Component {
 
   renderBalance() {
     let total = this.props.calculateTotal(this.state.bills, this.props.userId);
-    debugger
     if (total > 0) {
       return (
         <div className='cash-money'>
@@ -94,7 +93,6 @@ class BillIndex extends React.Component {
         </ul>
       </section>
     )
-    debugger
     const balance = this.renderBalance();
 
     const friendSettings = this.props.friendId ? (

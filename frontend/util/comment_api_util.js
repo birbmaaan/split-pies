@@ -1,30 +1,31 @@
-export const allComments = () => (
+export const allComments = () => {
+  return (
   $.ajax({
-    url: `/api/bills`,
+    url: `/api/comments`,
     method: 'GET'
   })
 )
+}
 
 export const findComment = (commentId) => (
   $.ajax({
-    url: `/api/bills`,
+    url: `/api/comments/${commentId}`,
     method: 'GET',
-    data: commentId
   })
 )
 
 export const createComment = (comment) => (
   $.ajax({
-    url: `/api/bills`,
-    method: 'GET',
+    url: `/api/comments`,
+    method: 'POST',
     data: {comment}
   })
 )
 
 export const deleteComment = (commentId) => (
   $.ajax({
-    url: `/api/bills`,
-    method: 'GET',
-    data: { commentId }
+    url: `/api/bills/${commentId}`,
+    method: 'DELETE',
+    data: commentId
   })
 )

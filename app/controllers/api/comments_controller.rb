@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   def index
-    @comments = Comment.find_by(bill_id: params[:billId])
+    @comments = Comment.all
     render :index
   end
 

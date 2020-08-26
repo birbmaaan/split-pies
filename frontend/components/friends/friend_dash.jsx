@@ -17,7 +17,6 @@ class FriendDash extends React.Component {
       }
     }))
     }
-    debugger
     return (
       <BillIndexContainer friend={this.props.friend} friendId={this.props.friend.id} />
     )
