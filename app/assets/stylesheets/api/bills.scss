@@ -93,7 +93,6 @@
 .bill-index-item-info img {
   width: 86px;
   height: 86px;
-  border: 1px solid black;
   background: #aaa;
 }
 
@@ -139,14 +138,14 @@
 }
 
 .in-the-red {
-  color: red;
+  color: #ff652f;
 }
 
 .cash-money {
   color: #5bc4a7;
 }
 
-.cash-money h4 {
+.cash-money h4, .in-the-red h4 {
   font-size: 28px;
   font-weight: 700;
   padding: 5px 0;

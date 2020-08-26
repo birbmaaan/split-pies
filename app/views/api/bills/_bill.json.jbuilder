@@ -25,13 +25,12 @@ partner_two = {
 
 users = [partner_one, partner_two]
 
-
 json.id bill.id
 json.description bill.description 
 json.paidUp bill.paid_up 
 json.amount bill.amount 
 json.category bill.category 
 json.createdAt created_at
-json.createdBy bill.partner_one_id 
+json.createdBy bill.author_id
 json.updatedAt updated_at
 json.partners users

@@ -5,14 +5,11 @@ import BillIndexItemContainer from './bill_index_item_container';
 class BillIndex extends React.Component {
   constructor(props) {
     super(props)
-    
-    // this.calculateTotal = this.calculateTotal.bind(this);
-    // this.renderBalance = this.renderBalance.bind(this);
   }
 
   renderBalance() {
+    let total = this.props.calculateTotal(this.props.bills, this.props.userId);
     debugger
-    const total = this.props.calculateTotal(this.props.bills, this.props.userId);
     if (total > 0) {
       return (
         <div className='cash-money'>
@@ -21,11 +18,11 @@ class BillIndex extends React.Component {
         </div>
       )
     } else if (total < 0) {
-      let newTotal = -(total) 
+      total = total.slice(1)
       return (
         <div className="in-the-red">
           <h3>you owe</h3>
-          <h4>${newTotal}</h4>
+          <h4>${total}</h4>
         </div>
       )
     } else {

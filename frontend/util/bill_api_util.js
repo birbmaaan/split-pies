@@ -48,7 +48,6 @@ export const calculateTotal = (bills, userId) => {
   let total = 0;
   const that = this;
   bills.forEach((bill) => {
-    debugger
     if (userId === bill.partners[0].userId) {
       total += parseFloat(bill.partners[0].netBalance)
     } else {

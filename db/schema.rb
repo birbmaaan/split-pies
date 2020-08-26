@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_214649) do
+ActiveRecord::Schema.define(version: 2020_08_26_040902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_214649) do
     t.string "partner_two_paid_share", null: false
     t.string "partner_two_owed_share", null: false
     t.boolean "paid_up", null: false
+    t.integer "author_id", null: false
     t.index ["partner_one_id"], name: "index_bills_on_partner_one_id"
     t.index ["partner_two_id"], name: "index_bills_on_partner_two_id"
   end

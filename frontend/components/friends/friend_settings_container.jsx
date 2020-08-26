@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import FriendSettings from './friend_settings';
+import { deleteFriend } from '../../actions/friend_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   friendId: ownProps.friendId,

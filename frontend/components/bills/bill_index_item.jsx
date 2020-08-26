@@ -29,7 +29,7 @@ class BillIndexItem extends React.Component {
 
         <div className='bill-index-item-main'>
           <div className='bill-index-item-info'>
-            <img src="" alt="category-icon"/>
+            <img src={window.catGeneral} alt="category-icon"/>
 
             <div>
               <h1>{this.props.bill.description}</h1>
@@ -41,12 +41,12 @@ class BillIndexItem extends React.Component {
 
           <div className='bill-index-item-breakdown'>
             <ul>
-              <li key={this.props.partnerOne.userId}><p>
+              <li key={this.props.partnerOne.id}><p>
                 <strong>{this.props.partnerOne.name}</strong> paid 
                 <strong> ${parseFloat(this.props.firstPay.paidShare).toFixed(2)}</strong> and owes
                 <strong> ${parseFloat(this.props.secondPay.owedShare).toFixed(2)}</strong>
               </p></li>
-              <li key={this.props.secondPay.userId}><p>
+              <li key={this.props.partnerTwo.id}><p>
                 <strong>{this.props.partnerTwo.name}</strong> owes
                 <strong> ${parseFloat(this.props.firstPay.owedShare).toFixed(2)}</strong>
               </p></li>
