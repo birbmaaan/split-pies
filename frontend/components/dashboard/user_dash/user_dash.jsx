@@ -22,6 +22,7 @@ class UserDash extends React.Component {
 
         <section className="main-content-right">
           <h1>GET SPLITWISE PRO!</h1>
+          <p>&#60;not available in your region&#62;</p>
         </section>
       </div>
     )

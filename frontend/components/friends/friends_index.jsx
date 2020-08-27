@@ -20,7 +20,7 @@ class FriendsIndex extends React.Component {
       <div className='friends-index-container'>
         <div className='dashbar-header'> 
           <h2>FRIENDS</h2>
-          <p><Link to='/'>+ add</Link></p>
+          <p></p>
         </div>
         <ul className='friends-index'>
           {friendUsers.map((friendUser) => {
@@ -34,12 +34,7 @@ class FriendsIndex extends React.Component {
             />
           )})}
         </ul>
-        <FriendForm 
-          addFriend={this.props.addFriend}
-          userId={this.props.userId}
-          errors={this.props.errors}
-          clearErrors={this.props.clearErrors}
-        />
+        <FriendForm />
       </div>
     )
   }

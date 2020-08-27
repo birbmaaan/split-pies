@@ -13,7 +13,28 @@
 }
 
 .main-content-left h1 {
-  padding: 0 0 10px;
+  padding: 5px;
+}
+
+.main-content-left a {
+  display: block
+}
+
+.main-content-left > h1:hover {
+  background-color: #eee;
+}
+
+.recent-activity a {
+  display: block;
+  color: #ff652f;
+}
+
+.recent-activity > h1 > a:visited {
+  color: #ff652f;
+}
+
+.recent-activity p:hover, .recent-activity h1:hover {
+  background-color: #eee;
 }
 
 .recent-activity p {
@@ -61,9 +82,15 @@ input::placeholder {
   padding: 5px;
 }
 
-
+.friends-index a {
+  display: block;
+}
 .friends-index li {
-  padding-bottom: 10px;
+  padding: 5px;
+}
+
+.friends-index li:hover {
+  background-color: #eee;
 }
 
 .add-friend-form div{

@@ -1,3 +1,32 @@
 // Place all the styles related to the api/friends controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.add-friend-error {
+  position: absolute;
+  top: 0;
+  width: 400px;
+  left: calc(50% - 200px);
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  box-shadow:
+  0 0 20px rgba(0,0,0,0.2);
+}
+
+.add-friend-error p {
+  padding: 15px;
+  color: #333333;
+}
+
+.add-friend-error .orange-btn {
+  color: white;
+  background-color: #ff652f;
+  padding: 7px 25px;
+  margin: 15px;
+  float: right;
+}
+
+.add-friend-error .orange-btn:hover {
+  background-color: #e64f18;
+}

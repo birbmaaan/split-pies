@@ -23,9 +23,9 @@ class Dashboard extends React.Component {
           <p><Link to="/all">All expenses</Link></p>
         </div>
 
-        <div className='dashbar-header'>
+        {/* <div className='dashbar-header'>
           <h2>GROUPS</h2>
-        </div>
+        </div> */}
 
         <FriendsContainer />
       </section>

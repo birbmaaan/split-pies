@@ -5,7 +5,6 @@ import { deleteBill, allBills } from '../../actions/bill_actions';
 import { allFriendUsers } from '../../actions/friend_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return ({
   partnerOne: state.entities.users[ownProps.bill.partners[0].userId],
   firstPay: ownProps.bill.partners[0],

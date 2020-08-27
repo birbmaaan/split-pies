@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import FriendsIndex from './friends_index';
 import { addFriend, deleteFriend, allFriends, findFriend, allFriendUsers } from '../../actions/friend_actions'
 import { clearSessionErrors } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions'; 
 
 const mapStateToProps = state => {
   return ({
@@ -19,7 +20,8 @@ const mapDispatchToProps = dispatch => ({
   allFriends: userId => dispatch(allFriends(userId)),
   findFriend: friendUserId => dispatch(findFriend(friendUserId)),
   allFriendUsers: userId => dispatch(allFriendUsers(userId)),
-  clearErrors: () => dispatch(clearSessionErrors())
+  clearErrors: () => dispatch(clearSessionErrors()),
+  openModal: modal => dispatch(openModal(modal)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(FriendsIndex);

@@ -1,4 +1,8 @@
 import React from 'react';
+import { clearSessionErrors } from '../../actions/session_actions';
+import { connect } from 'react-redux';
+import { addFriend } from '../../actions/friend_actions';
+import { closeModal} from '../../actions/modal_actions';
 
 class FriendForm extends React.Component {
   constructor(props) {
@@ -18,6 +22,7 @@ class FriendForm extends React.Component {
     e.preventDefault();
     this.props.addFriend({userId: this.props.userId, email: this.state.email}).then(() => this.renderSuccess())
     this.setState({email: ''});
+    this.props.closeModal();
   }
 
   handleChange(e) {
@@ -28,7 +33,7 @@ class FriendForm extends React.Component {
     return(
       <div className="add-friend-error">
         <p>{this.props.errors}</p>
-        <button onClick={() => this.props.clearErrors()}>OK</button>
+        <button className='orange-btn' onClick={() => this.props.clearErrors()}>OK</button>
       </div>
     )
   }
@@ -59,4 +64,15 @@ class FriendForm extends React.Component {
   }
 }
 
-export default FriendForm
+const mapStateToProps = (state) => ({
+  userId: state.session.id,
+  errors: state.errors.session
+})
+
+const mapDispatchToProps = dispatch => ({
+  clearErrors: () => dispatch(clearSessionErrors()),
+  addFriend: friendInfo => dispatch(addFriend(friendInfo)),
+  closeModal: () => dispatch(closeModal())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(FriendForm)

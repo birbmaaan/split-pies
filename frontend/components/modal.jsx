@@ -3,6 +3,7 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewBillContainer from './bills/new_bill_container';
 import EditBillContainer from './bills/edit_bill_container';
+import FriendForm from './friends/friend_form';
 
 function Modal({modal}) {
   if (!modal) {
@@ -17,6 +18,8 @@ function Modal({modal}) {
     case 'editBill':
       component = <EditBillContainer billId={modal.objectId}/>;
       break;
+    case 'addFriend':
+      component = <FriendForm />
     default:
       return null;
   }
