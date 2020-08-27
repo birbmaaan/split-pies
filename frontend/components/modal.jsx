@@ -5,6 +5,7 @@ import NewBillContainer from './bills/new_bill_container';
 import EditBillContainer from './bills/edit_bill_container';
 import FriendForm from './friends/friend_form';
 import SettleUpForm from './settle_up/settle_up_form';
+import Feedback from './feedback';
 
 function Modal({modal}) {
   if (!modal) {
@@ -25,10 +26,13 @@ function Modal({modal}) {
     case 'settleUp':
       component = <SettleUpForm />
       break;
+    case 'feedback':
+      component = <Feedback />
+      break;
     default:
       return null;
   }
-  debugger
+  
   return (
     <div className='modal-background' onClick={closeModal}>
       <div className='modal-child' onClick={e => e.stopPropagation()}>

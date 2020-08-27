@@ -14,7 +14,7 @@ class UserDash extends React.Component {
         <section className="main-content-center">
           <DashHeader
             registered={this.props.user.registered} 
-            name={this.props.user.name}
+            name={'Dashboard'}
             openModal={this.props.openModal}  
           />
           <DashExpensesContainer />

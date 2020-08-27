@@ -12,7 +12,6 @@ class Dashboard extends React.Component {
   }
 
   render() {
-
     return (
     <div className='dashboard-container'>
       <section className="main-content-left">
@@ -23,6 +22,7 @@ class Dashboard extends React.Component {
           <p><Link to="/all">All expenses</Link></p>
         </div>
 
+        <button className='green-btn feedback-modal-button' onClick={() => this.props.openModal('feedback')}>Feedback</button>
         {/* <div className='dashbar-header'>
           <h2>GROUPS</h2>
         </div> */}
