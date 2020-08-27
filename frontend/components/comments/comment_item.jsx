@@ -7,9 +7,11 @@ class CommentItem extends React.Component {
   render() {  
     debugger
     return (
-      <li>
-        <h1>{this.props.author.name}</h1>
-        <h2>{this.props.comment.createdAt}</h2>
+      <li className="comment">
+        <div>
+          <h1>{this.props.author.name}</h1>
+          <h4>{this.props.comment.createdAt}</h4>
+        </div>
         <button onClick={() => this.props.deleteComment(this.props.comment.id)}>x</button>
         <p>{this.props.comment.content}</p>
       </li>

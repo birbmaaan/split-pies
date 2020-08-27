@@ -65,7 +65,7 @@ class BillIndexItem extends React.Component {
               </p></li>
             </ul>
             <div>
-              <h1>SPENDING BY CATEGORY</h1>
+              {/* <h1>SPENDING BY CATEGORY</h1> */}
               <h1>NOTES AND COMMENTS</h1>
               <CommentIndexContainer bill={this.props.bill}/>
             </div>

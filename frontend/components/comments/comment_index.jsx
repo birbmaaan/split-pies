@@ -34,7 +34,7 @@ class CommentIndex extends React.Component {
       commentBox = null
     } else {
       commentBox = (
-        <ul>
+        <ul className="comment-index">
           {this.props.comments.map((comment) => (
             <CommentItem key={comment.id} comment={comment} />
           ))}
@@ -43,10 +43,10 @@ class CommentIndex extends React.Component {
     }
 
     return (
-    <div>
+    <div className='comment-index-container'>
       {commentBox}
       <form className="new-comment-form" onSubmit={this.handleSubmit}>  
-        <textarea onChange={this.handleChange} value={this.state.content} placeholder="Add a comment" cols="30" rows="10"></textarea>
+        <textarea onChange={this.handleChange} value={this.state.content} placeholder="Add a comment"></textarea>
         <button className="orange-btn" type="submit">Post</button>
       </form>
     </div>

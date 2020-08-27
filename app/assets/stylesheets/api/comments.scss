@@ -1,3 +1,86 @@
 // Place all the styles related to the api/comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-index-container ul {
+  width: 100%;
+
+}
+
+.comment {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment h1 {
+  color: #333333;
+  font-size: 13px;
+}
+
+.comment h4 {
+  color: #999999;
+  font-size: 11px;
+  padding-left: 5px;
+}
+
+.comment div {
+  width: calc(100% - 9px);
+  display: flex;
+}
+
+.new-comment-form textarea {
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 13px;  
+}
+
+textarea::placeholder {
+  color: #aaa;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.comment button {
+  color: #c00;
+  border: none;
+  padding: 0;
+  border-bottom: 2px solid white;
+  border-radius: 0px;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: -5px;
+}
+
+.comment button:hover {
+  border-bottom: 2px solid #c00
+}
+
+.comment-index-container .orange-btn {
+  padding: 3px 5px;
+  text-shadow: 0px -1px #575757;
+  margin: 5px 0;
+}
+
+// .bill-index-item-header-right button {
+//   color: white;
+//   border: none;
+//   padding: 0;
+//   font-size: 20px; 
+//   font-weight: 700;
+//   border-bottom: 2px solid white;
+// }
+
+// .bill-index-item-header-right button:hover {
+//   color: #c00;
+//   cursor: pointer;
+//   border-bottom: 2px solid #c00;
+//   border-radius: 0px;
+//   margin: -7px 0 7px;
+// }
