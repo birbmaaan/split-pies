@@ -44,7 +44,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  height: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -100,6 +101,10 @@ label {
 
 a {
   color: #999999;
+}
+
+html, body, .main-app, #root, .dashboard-container {
+  height: 100%;
 }
 
 @import 'navbar.css';

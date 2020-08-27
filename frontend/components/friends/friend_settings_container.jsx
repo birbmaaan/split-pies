@@ -4,12 +4,25 @@ import { connect } from 'react-redux';
 import FriendSettings from './friend_settings';
 import { deleteFriend } from '../../actions/friend_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  friendId: ownProps.friendId,
+const mapStateToProps = (state, ownProps) => {
+  debugger
+  let friendAssociationId;
+  let friendAssociations = Object.values(state.entities.friends);
+  if (friendAssociations.length > 0) {
+    friendAssociations.forEach((friend) => {
+      if (friend.friend_id === ownProps.friendId) friendAssociationId = friend.id
+    })
+  }
+  debugger
+  return ({
+  friend: state.entities.friends[friendAssociationId]
 })
+}
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => {
+  return ({
   deleteFriend: friendId => dispatch(deleteFriend(friendId))
 })
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(FriendSettings))

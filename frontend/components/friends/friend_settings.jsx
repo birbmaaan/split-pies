@@ -12,7 +12,7 @@ class FriendSettings extends React.Component {
   }
 
   handleClick() {
-    this.props.deleteFriend(this.props.friendId)
+    this.props.deleteFriend(this.props.friend.id)
     this.setState({redirect: '/dashboard'})
   }
 

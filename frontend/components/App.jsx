@@ -8,7 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal';
 
 const App = () => (
-  <div>
+  <div className="main-app">
     <Modal />
     <header>
       <NavbarContainer />
