@@ -5,6 +5,7 @@ import { deleteComment } from '../../actions/comment_actions';
 class CommentItem extends React.Component {
 
   render() {  
+    debugger
     return (
       <li className="comment">
         <div>

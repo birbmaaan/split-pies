@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BillForm from './bill_form';
+import BillForm from './_bill_form';
 import { createBill } from '../../actions/bill_actions';
 import { closeModal } from '../../actions/modal_actions';
 

@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import BillIndexItem from './bill_index_item';
 import { openModal } from '../../actions/modal_actions';
 import { deleteBill } from '../../actions/bill_actions';
-import { allFriendUsers } from '../../actions/friend_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -19,7 +18,6 @@ const mapDispatchToProps = dispatch => {
   return ({
   openModal: (modal, objectId) => dispatch(openModal(modal, objectId)),
   deleteBill: billId => dispatch(deleteBill(billId)),
-  allFriendUsers: () => dispatch(allFriendUsers())
 })
 }
 

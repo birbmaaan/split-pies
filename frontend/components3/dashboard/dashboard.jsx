@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import FriendDashContainer from '../dashboard/friend_dash/friend_dash_container';
+import FriendDashContainer from '../friends/friend_dash_container';
 import FriendsContainer from '../friends/friends_container';
-import UserDashContainer from './user_dash/user_dash_container';
-import BillsDashContainer from './bills_dash/bills_dash_container';
+import UserDashContainer from './user_dash_container';
+import BillIndexContainer from '../bills/bill_index_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -33,8 +33,8 @@ class Dashboard extends React.Component {
         <Switch>
           <Route path='/dashboard' component={UserDashContainer} />
           <Route path={`/friends/:id`} component={FriendDashContainer} />
-          <Route path='/all' component={BillsDashContainer} />
-          <Route path='/activity' component={BillsDashContainer} />
+          <Route path='/all' component={BillIndexContainer} />
+          <Route path='/activity' component={BillIndexContainer} />
         </Switch>
     </div>
     )
