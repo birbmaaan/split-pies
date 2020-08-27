@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { deleteComment } from '../../actions/comment_actions';
  
 class CommentItem extends React.Component {
 
@@ -9,6 +10,7 @@ class CommentItem extends React.Component {
       <li>
         <h1>{this.props.author.name}</h1>
         <h2>{this.props.comment.createdAt}</h2>
+        <button onClick={() => this.props.deleteComment(this.props.comment.id)}>x</button>
         <p>{this.props.comment.content}</p>
       </li>
     )
@@ -20,4 +22,8 @@ const mapStateToProps = (state, ownProps) => ({
   comment: ownProps.comment,
 })
 
-export default connect(mapStateToProps)(CommentItem);
+const mapDispatchToProps = dispatch => ({
+  deleteComment: commentId => dispatch(deleteComment(commentId))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentItem);

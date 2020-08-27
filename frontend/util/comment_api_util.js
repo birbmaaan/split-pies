@@ -24,7 +24,7 @@ export const createComment = (comment) => (
 
 export const deleteComment = (commentId) => (
   $.ajax({
-    url: `/api/bills/${commentId}`,
+    url: `/api/comments/${commentId}`,
     method: 'DELETE',
     data: commentId
   })

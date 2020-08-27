@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
-import { allComments } from '../../actions/comment_actions';
+import { allComments, createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let billComments = [];
@@ -17,11 +17,14 @@ const mapStateToProps = (state, ownProps) => {
   
   return ({
     comments: billComments,
+    billId: ownProps.bill.id,
+    userId: state.session.id,
   })
 }
 
 const mapDispatchToProps = dispatch => ({
-  allComments: () => dispatch(allComments())
+  allComments: () => dispatch(allComments()),
+  createComment: comment => dispatch(createComment(comment))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentIndex)
