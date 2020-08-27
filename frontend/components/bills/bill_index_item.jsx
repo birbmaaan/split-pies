@@ -3,12 +3,12 @@ import CommentIndexContainer from '../comments/comment_index_container';
 
 class BillIndexItem extends React.Component {
   componentDidMount() {
-    this.props.allFriendUsers()
+    this.props.allFriendUsers();
   }
 
   render () {
-    if (!this.props.partnerOne) return null;
-
+    if (!this.props.partnerOne || !this.props.partnerTwo) return null;
+    debugger
     let billAuthor = this.props.bill.createdBy === this.props.partnerOne.id ? 
     this.props.partnerOne.name : this.props.partnerTwo.name ;
     let date = this.props.bill.createdAt;

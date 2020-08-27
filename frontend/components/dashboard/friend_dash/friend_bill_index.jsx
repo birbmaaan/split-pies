@@ -5,9 +5,6 @@ import NoExpenses from '../bills_dash/no_expenses';
 class FriendBillIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      bills: this.props.bills
-    }
   }
 
   limitToFriendBills() {
@@ -19,11 +16,9 @@ class FriendBillIndex extends React.Component {
         friendBills.push(bill);
       }
     })
-    this.setState({ bills: friendBills })
   }
 
   componentDidMount() {
-    
     this.props.allBills()
   }
 
@@ -32,7 +27,7 @@ class FriendBillIndex extends React.Component {
     return (
       <div className="main-content-bill-index">
         <ul>
-          {this.state.bills.map(((bill) => (
+          {this.props.bills.map(((bill) => (
             <BillIndexItemContainer bill={bill} key={bill.id} />
           )))}
         </ul>

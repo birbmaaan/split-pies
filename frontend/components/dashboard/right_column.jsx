@@ -2,8 +2,12 @@ import React from 'react';
 import FriendSettingsContainer from '../friends/friend_settings_container';
 import { calculateTotal } from '../../util/bill_api_util';
 import { connect } from 'react-redux';
+import { allBills } from '../../actions/bill_actions';
 
 class RightColumn extends React.Component {
+  componentDidMount() {
+    this.props.allBills();
+  }
 
   renderBalance() {
     let total = this.props.calculateTotal(this.props.bills, this.props.userId);
@@ -49,7 +53,7 @@ class RightColumn extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger 
+   
   let friendBills = [];
   let allBills = Object.values(state.entities.bills)
   if (ownProps.friendId) {
@@ -57,12 +61,11 @@ const mapStateToProps = (state, ownProps) => {
       if (bill.partners[0].userId === ownProps.friendId ||
         bill.partners[1].userId === ownProps.friendId) {
           friendBills.push(bill);
-        } else {
-          friendBills = allBills
-        }
+        } 
       }) 
+  } else {
+    friendBills = allBills;
   }
-  debugger
   return ({
     userId: state.session.id,
     friendId: ownProps.friendId,
@@ -71,7 +74,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  calculateTotal: calculateTotal
+  calculateTotal: calculateTotal,
+  allBills: () => dispatch(allBills()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RightColumn);

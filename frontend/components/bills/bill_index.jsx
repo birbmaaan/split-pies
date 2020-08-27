@@ -8,7 +8,6 @@ class BillIndex extends React.Component {
   }
   
   render() {
-    debugger
     const billIndex = (!this.props.bills || this.props.bills.length === 0) ? ( 
       <div>
         <NoExpenses />
@@ -22,7 +21,6 @@ class BillIndex extends React.Component {
         </ul>
       </div>
     )
-    debugger
     return (
       billIndex
     )

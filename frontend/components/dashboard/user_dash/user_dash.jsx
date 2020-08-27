@@ -3,8 +3,12 @@ import DashHeader from '../dash_header'
 import DashExpensesContainer from '../dash_expenses_container';
 
 class UserDash extends React.Component {
+  componentDidMount() {
+    this.props.allFriends()
+  }
 
   render() {
+    if (!this.props.user) return null;
     return(
       <div className="dash-content-container">
         <section className="main-content-center">

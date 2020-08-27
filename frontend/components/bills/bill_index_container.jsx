@@ -3,7 +3,6 @@ import BillIndex from './bill_index';
 import { allBills } from '../../actions/bill_actions';
 
 const mapStateToProps = state => {
-  debugger
   return ({
   bills: Object.values(state.entities.bills),
 })

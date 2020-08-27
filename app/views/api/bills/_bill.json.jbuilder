@@ -3,8 +3,8 @@ one_owed = bill.partner_one_owed_share
 two_paid = bill.partner_two_paid_share
 two_owed = bill.partner_two_owed_share
 
-one_net = one_paid.to_f - one_owed.to_f
-two_net = two_paid.to_f - two_owed.to_f
+one_net = one_paid.to_f - two_owed.to_f
+two_net = two_paid.to_f - one_owed.to_f
 
 created_at = bill.created_at.to_date
 updated_at = bill.updated_at.to_date

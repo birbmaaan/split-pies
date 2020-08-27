@@ -11,7 +11,7 @@ class Splash extends React.Component {
           <div>
             <h1>Less stress when sharing expenses</h1>
             <p>Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.</p>
-            <button><Link to='/signup'>Sign up</Link></button>
+            <Link to='/signup'><button>Sign up</button></Link>
           </div>
           <img src={window.pie} alt="have your pie and eat it too" />
         </section>

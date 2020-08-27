@@ -1,6 +1,6 @@
 class Api::FriendsController < ApplicationController
   def index
-    user = User.find_by(id: params[:userId])
+    user = User.find_by(id: current_user.id)
     @friends = user.friends_on_list
     render :index
   end

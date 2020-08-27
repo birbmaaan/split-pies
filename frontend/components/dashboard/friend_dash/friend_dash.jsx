@@ -10,7 +10,6 @@ class FriendDash extends React.Component {
 
   render() {
     if (!this.props.friend) return null;
-    debugger
     return (
       <div className='dash-content-container'>
         <section className='main-content-center'>
