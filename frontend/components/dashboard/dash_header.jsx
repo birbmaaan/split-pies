@@ -16,7 +16,7 @@ class DashHeader extends React.Component {
         </div>
         <ul>
           <button className='orange-btn' onClick={() => this.props.openModal('newBill')}>Add an expense</button>
-          <button className='green-btn'>Settle up</button>
+          <button className='green-btn' onClick={() => this.props.openModal('settleUp') }>Settle up</button>
         </ul>
       </div>
     )

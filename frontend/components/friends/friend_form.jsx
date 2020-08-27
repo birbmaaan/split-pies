@@ -31,7 +31,7 @@ class FriendForm extends React.Component {
 
   renderErrors() {
     return(
-      <div className="add-friend-error">
+      <div className="error-alert">
         <p>{this.props.errors}</p>
         <button className='orange-btn' onClick={() => this.props.clearErrors()}>OK</button>
       </div>

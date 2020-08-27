@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import NewBillContainer from './bills/new_bill_container';
 import EditBillContainer from './bills/edit_bill_container';
 import FriendForm from './friends/friend_form';
+import SettleUpForm from './settle_up/settle_up_form';
 
 function Modal({modal}) {
   if (!modal) {
@@ -20,10 +21,14 @@ function Modal({modal}) {
       break;
     case 'addFriend':
       component = <FriendForm />
+      break;
+    case 'settleUp':
+      component = <SettleUpForm />
+      break;
     default:
       return null;
   }
-
+  debugger
   return (
     <div className='modal-background' onClick={closeModal}>
       <div className='modal-child' onClick={e => e.stopPropagation()}>

@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.add-friend-error {
+.error-alert {
   position: absolute;
   top: 0;
   width: 400px;
@@ -14,12 +14,12 @@
   0 0 20px rgba(0,0,0,0.2);
 }
 
-.add-friend-error p {
+.error-alert p {
   padding: 15px;
   color: #333333;
 }
 
-.add-friend-error .orange-btn {
+.error-alert .orange-btn {
   color: white;
   background-color: #ff652f;
   padding: 7px 25px;
@@ -27,6 +27,6 @@
   float: right;
 }
 
-.add-friend-error .orange-btn:hover {
+.error-alert .orange-btn:hover {
   background-color: #e64f18;
 }
