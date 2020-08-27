@@ -69,6 +69,35 @@ Bill.create(
   paid_up: true
 )
 
+Bill.create(
+  description: "the blue pill", 
+  category: "general", 
+  amount: '54.00', 
+  author_id: 5,
+  partner_one_id: 5,
+  partner_two_id: 1,
+  split_equally: true,
+  partner_one_paid_share: '54.00',
+  partner_one_owed_share: '26.00',
+  partner_two_paid_share: '0',
+  partner_two_owed_share: '26.0',
+  paid_up: false 
+)
+
+Bill.create(
+  description: "bow and arrows", 
+  category: "general", 
+  amount: '39.50', 
+  author_id: 1,
+  partner_one_id: 1,
+  partner_two_id: 2,
+  split_equally: false,
+  partner_one_paid_share: '39.50',
+  partner_one_owed_share: '19.75',
+  partner_two_paid_share: '0',
+  partner_two_owed_share: '19.75',
+  paid_up: false 
+)
 
 Comment.create(
   content: "Thanks!",
@@ -110,4 +139,10 @@ Comment.create(
   content: "I gotchu fam",
   author_id: 3,
   bill_id: 2,
+)
+
+Comment.create(
+  content: "I need you to wake up",
+  author_id: 5,
+  bill_id: 4,
 )

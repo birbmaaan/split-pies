@@ -23,7 +23,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    debugger
     @comment = Comment.find_by(id: params[:id])
     if @comment
       @comment.destroy
