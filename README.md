@@ -95,6 +95,10 @@ When not logged in, visitors to SplitPies are only able to access the main splas
 
 Allowing users to add friends involved creating a table with two user_ids, as well as a column to determine whether or not the request was pending. For the sake of allowing users to record bills with friends who were not already members, a pending request translated to an unregistered user. Adding an unregistered friend creates an actual user account with a registered column set to false. This allows transactions to be recorded and linked to the relevant users in the database. For this to actually work smoothly, it will also require an ability for users to reset their password, as well as friend requesting to actually send an email.
 
+Having a friend association also allows for users to view bill totals between them and a friend.
+
+![](https://raw.githubusercontent.com/birbmaaan/split-pies/master/app/assets/images/readme5.png)
+
 # Features
 
 ### Current features
