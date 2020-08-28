@@ -57,6 +57,10 @@ modal.jsx
 ```
 
 Through careful application of selectors and state, I was able to keep the form's current state updated with all the information needed to successfully create a new bill. 
+
+![](https://raw.githubusercontent.com/birbmaaan/split-pies/master/app/assets/images/readme1.png)
+![](https://raw.githubusercontent.com/birbmaaan/split-pies/master/app/assets/images/readme2.png)
+
 ```
 bill_form.jsx
 
