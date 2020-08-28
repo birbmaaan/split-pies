@@ -22,6 +22,13 @@
   position: relative;
 }
 
+.modal-child .selector {
+  border-radius: 15px;
+  outline: none;
+  background: #f6f6f6;
+  border-color: #bbb;
+}
+
 .modal-header {
   color: white;
   font-weight: 700;
@@ -32,6 +39,7 @@
   justify-content: space-between;
   border: 1px solid #7b7b7b;
   border-bottom: 1px solid rgb(54, 151, 123);
+  
 }
 
 .modal-header h1 {
@@ -61,6 +69,7 @@
 .bill-form-inputs {
   display: flex;
   padding: 25px 40px;
+  border-top: 1px solid #eee;
 }
 
 .bill-form-modal img {
@@ -74,6 +83,22 @@
 
 .bill-info {
   padding: 0 10px 0 20px;;
+}
+
+.bill-paid-info {
+  display: flex;
+  justify-content: center;
+}
+
+.bill-paid-info p {
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.bill-paid-info .selector {
+  border: 1px dashed #ccc;
+  text-align-last: center;
+  display: block;
 }
 
 .bill-info input {
@@ -122,7 +147,7 @@
   color: #333333;
   text-align: center;
   font-size: 14px;
-  padding: 0 0 5px;
+  padding: 5px 0 10px;
 }
 
 
@@ -130,17 +155,31 @@
   margin-top: -10px 0 0 0;
 }
 
+.modal-user-selector {
+  display: flex;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.modal-user-selector strong {
+  font-weight: 700;
+}
+
+.modal-user-selector p {
+  margin-right: 10px;
+}
+
 .modal-footer {
   display: flex;
   width: 100%;
   padding: 10px 0;
-  // justify-content: flex-start;
+  justify-content: flex-end;
   // flex-direction: row;
   border-top: 1px solid #eee;
 }
 
 .modal-footer button {
-  margin-left: 10px;
+  margin-right: 10px;
   padding: 10px 15px;
   font-size: 15px;
   color: #333333;

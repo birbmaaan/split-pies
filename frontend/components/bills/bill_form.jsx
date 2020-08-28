@@ -78,7 +78,7 @@ class BillForm extends React.Component {
           </div>
         </div>
 
-        <div>
+        <div className="bill-paid-info">
           <p>Paid by</p>
           <select className='selector' value={this.state.partner_one_id} onChange={this.handleSwitch()}>
             <option defaultValue={this.props.userId}>you</option>
@@ -102,7 +102,7 @@ class BillForm extends React.Component {
         <button onClick={this.props.closeModal}>x</button>
       </section>
       <section className="modal-user-selector">
-        <p>With you and: </p>
+        <p>With <strong>you</strong> and: </p>
         <select className='selector' value={this.state.friend.id} onChange={this.handleSelect()}>
           <option value='' disabled>Select a friend</option>
           {this.props.friends.map(friend => (

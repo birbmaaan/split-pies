@@ -155,3 +155,50 @@
   font-weight: 700;
   padding: 5px 0;
 }
+
+.expenses-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #ddd;
+}
+
+.expenses-header li {
+  width: 33%;
+  text-align: center;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.expenses-header li:first-child {
+  border-right: 1px solid #ddd;
+}
+
+.expenses-header li:last-child {
+  border-left: 1px solid #ddd;
+}
+
+.expenses-header h1 {
+  padding-bottom: 3px;
+}
+
+.expenses-body {
+  display: flex;
+}
+
+.expenses-body li {
+  width: 50%;
+  padding: 15px 50px;
+  font-weight: 700;
+  text-align: center;
+}
+
+// .expenses-body li:last-child {
+//   text-align: right;
+// }
+
+.expenses-body p {
+  padding-top: 10px;
+}
+
+

@@ -58,6 +58,29 @@ export const calculateTotal = (bills, userId) => {
   return total.toFixed(2).toString();
 }
 
+export const calculateTotalOwed = (bills, userId, direction) => {
+  
+  let total = 0;
+  const that = this;
+  if (direction === 'lent') {
+    bills.forEach((bill) => {
+      
+      if (userId === bill.partners[0].userId) {
+        total += parseFloat(bill.partners[1].owedShare)
+      } 
+    })
+  } else {
+    bills.forEach((bill) => {
+      
+      if (userId === bill.partners[1].userId) {
+        total += parseFloat(bill.partners[0].owedShare)
+      } 
+    })
+  }
+
+  return total.toFixed(2).toString();
+}
+
 export const ensureDecimal = (amount) => {
   return parseFloat(amount).toFixed(2).toString()
 }
