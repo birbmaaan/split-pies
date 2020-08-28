@@ -43,7 +43,6 @@ export const allBills = () => dispatch => (
 )
 
 export const createBill = bill => dispatch => {
-  debugger
   return (
   billApi.createBill(bill)
     .then(newBill => dispatch(receiveBill(newBill)),

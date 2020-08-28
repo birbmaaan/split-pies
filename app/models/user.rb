@@ -68,7 +68,6 @@ class User < ApplicationRecord
 
   def switch_to_registered_friend
     self.friends_on_list.each do |friend|
-      debugger
       friend.pending = false
       other_user = User.find_by(id: friend.friend_id)
       pending_request = other_user.friends_on_list.find_by(friend_id: friend.user_id)

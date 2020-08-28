@@ -15,7 +15,6 @@ class Feedback extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="feedback-modal">
         <section className='modal-header'>

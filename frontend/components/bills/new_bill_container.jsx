@@ -22,9 +22,8 @@ const mapStateToProps = state => {
       partner_one_owed_share: '',
       partner_two_paid_share: '0.00',
       partner_two_owed_share: '0.00',
-      friend: {},
+      friend: {name: '', id: '', },
       author_id: state.session.id,
-      payer: state.session.id,
     }
   })
 }

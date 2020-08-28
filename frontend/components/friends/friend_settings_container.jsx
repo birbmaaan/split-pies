@@ -5,7 +5,6 @@ import FriendSettings from './friend_settings';
 import { deleteFriend } from '../../actions/friend_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   let friendAssociationId;
   let friendAssociations = Object.values(state.entities.friends);
   if (friendAssociations.length > 0) {
@@ -13,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
       if (friend.friend_id === ownProps.friendId) friendAssociationId = friend.id
     })
   }
-  debugger
   return ({
   friend: state.entities.friends[friendAssociationId]
 })
