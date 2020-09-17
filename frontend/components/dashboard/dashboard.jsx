@@ -4,6 +4,8 @@ import FriendDashContainer from '../dashboard/friend_dash/friend_dash_container'
 import FriendsContainer from '../friends/friends_container';
 import UserDashContainer from './user_dash/user_dash_container';
 import BillsDashContainer from './bills_dash/bills_dash_container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -22,12 +24,21 @@ class Dashboard extends React.Component {
           <p><Link to="/all">All expenses</Link></p>
         </div>
 
-        <button className='green-btn feedback-modal-button' onClick={() => this.props.openModal('feedback')}>Feedback</button>
-        {/* <div className='dashbar-header'>
-          <h2>GROUPS</h2>
-        </div> */}
-
+        <button 
+          className='green-btn feedback-modal-button' 
+          onClick={() => this.props.openModal('feedback')}
+        >
+          Feedback
+        </button>
         <FriendsContainer />
+        <div className="about-links">
+          <a href="https://github.com/birbmaaan/">
+            <FontAwesomeIcon className="icon-links" icon={faGithubSquare} />
+          </a>
+          <a href="https://www.linkedin.com/in/elijah-dove-4770b3184/">
+            <FontAwesomeIcon className="icon-links" icon={faLinkedin} />
+          </a>
+        </div>
       </section>
 
         <Switch>

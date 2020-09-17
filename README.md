@@ -99,7 +99,6 @@ Having a friend association also allows for users to view bill totals between th
 
 ![](https://raw.githubusercontent.com/birbmaaan/split-pies/master/app/assets/images/readme5.png)
 
-
 # Features
 
 ### Current features
