@@ -1,3 +1,23 @@
+.splash-main .about-links-splash {
+  margin: 0 0;
+  display: flex;
+  justify-content: space-around;
+  height: 66px;
+}
+
+.about-links-splash .icon-links {
+  font-size: 64px;
+  color: #5BC5A7;
+  border-bottom: 2px;
+}
+
+.about-links-splash .icon-links:hover {
+  color: #54bfa1;
+  padding-bottom: 3px;
+  border-bottom: 0px;
+  padding-top: 7px;
+}
+
 .splash {
   background-image: linear-gradient(#ffffff90, #ffffff90), image-url("background.png");
   background-repeat: repeat;
