@@ -9,10 +9,19 @@ class Api::BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
-    if @bill.save!
+    if @bill.save
       render :show
     else
-      render json: @bill.errors.full_messages, status: 402
+      errors = []
+      @bill.errors.full_messages.each do |error|
+        if error == "Description can't be blank"
+          errors.push("You must enter a description.")  
+        elsif error == "Amount can't be blank"
+          errors.push("You must enter an amount.")        
+        end
+      end
+
+      render json: errors, status: 402
     end
   end
 

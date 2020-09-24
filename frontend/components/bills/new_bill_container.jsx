@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BillForm from './bill_form';
-import { createBill } from '../../actions/bill_actions';
+import { createBill, clearBillErrors } from '../../actions/bill_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
@@ -12,10 +12,11 @@ const mapStateToProps = state => {
     formType: 'Add an expense',
     userId: state.session.id,
     friends: friends,
+    errors: state.errors.bills,
     bill: {
       description: '',
       amount: '',
-      category: '',
+      category: 'general',
       split: '0.00',
       split_equally: true,
       paid_up: false,
@@ -34,6 +35,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   processForm: bill => dispatch(createBill(bill)),
   closeModal: () => dispatch(closeModal()),
+  clearErrors: () => dispatch(clearBillErrors()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BillForm);

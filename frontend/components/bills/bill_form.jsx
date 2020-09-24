@@ -32,8 +32,7 @@ class BillForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    (this.props.processForm(this.state));
-    this.props.closeModal();
+    (this.props.processForm(this.state)).then(() => this.props.closeModal());
   }
 
   handleAmount() {
@@ -62,11 +61,25 @@ class BillForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return (
+      <div className="error-alert">
+        <ul>
+        {this.props.errors.map((error, i) =>{
+          return <li key={i}>{error}</li>
+        })}
+        </ul>
+        <button className='orange-btn' onClick={() => this.props.clearErrors()}>OK</button>
+      </div>
+    )
+  }
+
   render() {
     const { description, amount, partner_one_id, partner_two_id, friend, split, category } = this.state;
     
+    let errors = this.props.errors.length === 0 ? null : this.renderErrors()
+
     let categorySelect;
-    
     switch (this.state.category) {
       case "":
         categorySelect = <img src={window.catGeneral} alt="category-general" />;
@@ -134,6 +147,7 @@ class BillForm extends React.Component {
           <button onClick={this.props.closeModal}>Cancel</button>
           <button type='submit' className="green-btn">Save</button>
         </div>
+        <div>{errors}</div>
       </form>
     ) : (null)
 
