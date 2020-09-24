@@ -95,10 +95,17 @@
   font-size: 14px;
 }
 
-.bill-paid-info .selector {
+.bill-paid-info .selector{
   border: 1px dashed #ccc;
   text-align-last: center;
   display: block;
+}
+
+.bill-category .selector {
+  border: 1px dashed #ccc;
+  text-align-last: center;
+  display: block;
+  width: 64px;
 }
 
 .bill-info input {
@@ -121,6 +128,7 @@
 
 .amount-container {
   width: 180px;
+  padding-top: 10px;
   display: flex;
   border-bottom: 1px dashed #ddd;
 }

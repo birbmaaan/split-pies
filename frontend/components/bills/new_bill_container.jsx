@@ -5,14 +5,17 @@ import { createBill } from '../../actions/bill_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
+  const friendsObject = Object.values(state.entities.users);
+  const friends = friendsObject.filter(user => user.id !== state.session.id);
+
   return ({
     formType: 'Add an expense',
     userId: state.session.id,
-    friends: Object.values(state.entities.users),
+    friends: friends,
     bill: {
       description: '',
       amount: '',
-      category: 'general',
+      category: '',
       split: '0.00',
       split_equally: true,
       paid_up: false,

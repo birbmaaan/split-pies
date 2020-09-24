@@ -63,13 +63,54 @@ class BillForm extends React.Component {
   }
 
   render() {
-    const { description, amount, partner_one_id, partner_two_id, friend, split } = this.state;
+    const { description, amount, partner_one_id, partner_two_id, friend, split, category } = this.state;
+    
+    let categorySelect;
+    
+    switch (this.state.category) {
+      case "":
+        categorySelect = <img src={window.catGeneral} alt="category-general" />;
+      case "general":
+        categorySelect = <img src={window.catGeneral} alt="category-general" />;
+        break;
+      case "groceries":
+        categorySelect = <img src={window.catGrocery} alt="category-groceries" />;
+        break;
+      case "food":
+        categorySelect = <img src={window.catFood} alt="category-food" />;
+        break;
+      case "entertainment":
+        categorySelect = <img src={window.catEntertainment} alt="category-entertainment" />;
+        break;
+      case "transportation":
+        categorySelect = <img src={window.catTransportation} alt="category-transportation" />;
+        break;
+      case "home":
+        categorySelect = <img src={window.catHome} alt="category-home" />;
+        break;
+      case "utilities":
+        categorySelect = <img src={window.catUtilities} alt="category-utilities" />;
+        break;
+      default:
+        break;
+    }
 
     const billForm = partner_two_id ? (
       <form onSubmit={this.handleSubmit} className='bill-form-modal'>
         <div className='bill-form-inputs'>
-          <img src={window.catGeneral} alt="category-icon" />
-
+          <div className="bill-category">
+            <select className="selector" value={category} onChange={this.handleChange("category")}>
+              <option value="" disabled>Choose a category</option>
+              <option value="general">general</option>
+              <option value="groceries">groceries</option>
+              <option value="food">food</option>
+              <option value="entertainment">entertainment</option>
+              <option value="transportation">transportation</option>
+              <option value="home">home</option>
+              <option value="utilities">utilities</option>
+            </select>
+            {categorySelect}
+          </div>
           <div className="bill-info">
             <input type="text" onChange={this.handleChange("description")} value={description} placeholder="Enter a description" />
             <div className="amount-container">

@@ -26,6 +26,35 @@ class BillIndexItem extends React.Component {
       amountLent = (<p className="in-the-red">${parseFloat(firstPay.owedShare).toFixed(2)}</p>)
     }
 
+    let categorySelect;
+    switch (bill.category) {
+      case "":
+        categorySelect = <img src={window.catGeneral} alt="category-general" />;
+      case "general":
+        categorySelect = <img src={window.catGeneral} alt="category-general" />;
+        break;
+      case "groceries":
+        categorySelect = <img src={window.catGrocery} alt="category-groceries" />;
+        break;
+      case "food":
+        categorySelect = <img src={window.catFood} alt="category-food" />;
+        break;
+      case "entertainment":
+        categorySelect = <img src={window.catEntertainment} alt="category-entertainment" />;
+        break;
+      case "transportation":
+        categorySelect = <img src={window.catTransportation} alt="category-transportation" />;
+        break;
+      case "home":
+        categorySelect = <img src={window.catHome} alt="category-home" />;
+        break;
+      case "utilities":
+        categorySelect = <img src={window.catUtilities} alt="category-utilities" />;
+        break;
+      default:
+        break;
+    }
+
     return (
       <div className="bill-index-item">
 
@@ -48,8 +77,8 @@ class BillIndexItem extends React.Component {
 
         <div className='bill-index-item-main'>
           <div className='bill-index-item-info'>
-            <img src={window.catGeneral} alt="category-icon"/>
-
+            {categorySelect}
+ 
             <div>
               <h1>{bill.description}</h1>
               <h3>${parseFloat(bill.amount).toFixed(2)}</h3>
