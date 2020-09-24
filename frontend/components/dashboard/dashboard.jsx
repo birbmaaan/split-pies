@@ -19,8 +19,7 @@ class Dashboard extends React.Component {
       <section className="main-content-left">
         <h1><Link to='/dashboard'>Dashboard</Link></h1>
         <div className="recent-activity">
-          <h1><Link to="/activity">Recent activity</Link></h1>
-          <input type="text" placeholder="Filter by name" />
+          {/* <h1><Link to="/activity">Recent activity</Link></h1> */}
           <p><Link to="/all">All expenses</Link></p>
         </div>
 

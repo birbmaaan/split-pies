@@ -29,13 +29,15 @@ class CommentIndex extends React.Component {
   }
 
   render() {
+    const { comments } = this.props;
+
     let commentBox;
-    if (this.props.comments.length === 0) {
+    if (comments.length === 0) {
       commentBox = null
     } else {
       commentBox = (
         <ul className="comment-index">
-          {this.props.comments.map((comment) => (
+          {comments.map((comment) => (
             <CommentItem key={comment.id} comment={comment} />
           ))}
         </ul>

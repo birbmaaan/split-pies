@@ -50,6 +50,6 @@ export const createComment = (comment) => dispatch => (
 
 export const deleteComment = (commentId) => dispatch => (
   commentApi.deleteComment(commentId)
-    .then(comment => dispatch(receiveComment(comment)),
+    .then(comment => dispatch(removeComment(comment)),
     errors => dispatch(receiveCommentErrors(errors)))
 )

@@ -3,13 +3,15 @@ import CommentIndex from './comment_index';
 import { allComments, createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  const { bill } = ownProps;
+
   let billComments = [];
   const allComments = Object.values(state.entities.comments);
   if (allComments) {
     allComments.forEach((comment) => {
-      if ((ownProps.bill.partners[0].userId === comment.author_id || 
-          ownProps.bill.partners[1].userId === comment.author_id) && 
-          ownProps.bill.id === comment.bill_id) {
+      if ((bill.partners[0].userId === comment.author_id || 
+          bill.partners[1].userId === comment.author_id) && 
+          bill.id === comment.bill_id) {
         billComments.push(comment);
       }
     })
