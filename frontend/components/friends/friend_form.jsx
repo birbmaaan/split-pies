@@ -43,10 +43,6 @@ class FriendForm extends React.Component {
     setTimeout(() => this.setState({ message: '' }), 3000);
   }
 
-  // componentDidMount() {
-  //   this.props.clearErrors()
-  // }
-
   render() {
     let errors = this.props.errors.length === 0 ? null : this.renderErrors()
 

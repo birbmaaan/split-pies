@@ -53,13 +53,14 @@ class RightColumn extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-   
+  const { friendId } = ownProps; 
+
   let friendBills = [];
   let allBills = Object.values(state.entities.bills)
-  if (ownProps.friendId) {
+  if (friendId) {
     allBills.forEach((bill) => {
-      if (bill.partners[0].userId === ownProps.friendId ||
-        bill.partners[1].userId === ownProps.friendId) {
+      if (bill.partners[0].userId === friendId ||
+        bill.partners[1].userId === friendId) {
           friendBills.push(bill);
         } 
       }) 
@@ -68,7 +69,7 @@ const mapStateToProps = (state, ownProps) => {
   }
   return ({
     userId: state.session.id,
-    friendId: ownProps.friendId,
+    friendId: friendId,
     bills: friendBills,
   })
 }

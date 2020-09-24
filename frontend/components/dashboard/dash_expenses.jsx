@@ -1,15 +1,6 @@
 import React from 'react';
 
 class DashExpenses extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // this.state = {
-    //   owe: false,
-    //   lent: false 
-    // }
-  }
-
   componentDidMount() {
     this.props.allBills();
   }

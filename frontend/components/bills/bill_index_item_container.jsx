@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
 import BillIndexItem from './bill_index_item';
 import { openModal } from '../../actions/modal_actions';
-import { deleteBill, allBills } from '../../actions/bill_actions';
+import { deleteBill } from '../../actions/bill_actions';
 import { allFriendUsers } from '../../actions/friend_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  const { bill } = ownProps;
   return ({
-  partnerOne: state.entities.users[ownProps.bill.partners[0].userId],
+  partnerOne: state.entities.users[bill.partners[0].userId],
   firstPay: ownProps.bill.partners[0],
-  partnerTwo: state.entities.users[ownProps.bill.partners[1].userId],
-  secondPay: ownProps.bill.partners[1],
-  bill: ownProps.bill,
+  partnerTwo: state.entities.users[bill.partners[1].userId],
+  secondPay: bill.partners[1],
+  bill: bill,
   userId: state.session.id
 })
 }

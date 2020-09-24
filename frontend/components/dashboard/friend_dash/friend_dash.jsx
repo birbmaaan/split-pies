@@ -9,17 +9,19 @@ class FriendDash extends React.Component {
   }
 
   render() {
-    if (!this.props.friend) return null;
+    const { friend } = this.props;
+
+    if (!friend) return null;
     return (
       <div className='dash-content-container'>
         <section className='main-content-center'>
           <DashHeader 
-            name={this.props.friend.name}
-            registered={this.props.friend.registered}
+            name={friend.name}
+            registered={friend.registered}
           />
-          <FriendBillIndexContainer friendId={this.props.friend.id}/>
+          <FriendBillIndexContainer friendId={friend.id}/>
         </section>
-        <RightColumn friendId={this.props.friend.id}/>
+        <RightColumn friendId={friend.id}/>
       </div>
     )
   }

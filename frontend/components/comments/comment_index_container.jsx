@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
   
   return ({
     comments: billComments,
-    billId: ownProps.bill.id,
+    billId: bill.id,
     userId: state.session.id,
   })
 }

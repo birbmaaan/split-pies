@@ -63,30 +63,31 @@ class BillForm extends React.Component {
   }
 
   render() {
+    const { description, amount, partner_one_id, partner_two_id, friend, split } = this.state;
 
-    const billForm = this.state.partner_two_id ? (
+    const billForm = partner_two_id ? (
       <form onSubmit={this.handleSubmit} className='bill-form-modal'>
         <div className='bill-form-inputs'>
           <img src={window.catGeneral} alt="category-icon" />
 
           <div className="bill-info">
-            <input type="text" onChange={this.handleChange("description")} value={this.state.description} placeholder="Enter a description" />
+            <input type="text" onChange={this.handleChange("description")} value={description} placeholder="Enter a description" />
             <div className="amount-container">
               <p>$</p>
-              <input type="text" onChange={this.handleAmount()} value={this.state.amount} placeholder="0.00" />
+              <input type="text" onChange={this.handleAmount()} value={amount} placeholder="0.00" />
             </div>
           </div>
         </div>
 
         <div className="bill-paid-info">
           <p>Paid by</p>
-          <select className='selector' value={this.state.partner_one_id} onChange={this.handleSwitch()}>
+          <select className='selector' value={partner_one_id} onChange={this.handleSwitch()}>
             <option defaultValue={this.props.userId}>you</option>
-            <option value={this.state.friend.id}>{this.state.friend.name}</option>
+            <option value={friend.id}>{friend.name}</option>
           </select>
           <p>and split equally.</p>
         </div>
-        <p>(${this.state.split}/person)</p>
+        <p>(${split}/person)</p>
 
         <div className='modal-footer'>
           <button onClick={this.props.closeModal}>Cancel</button>
@@ -103,10 +104,10 @@ class BillForm extends React.Component {
       </section>
       <section className="modal-user-selector">
         <p>With <strong>you</strong> and: </p>
-        <select className='selector' value={this.state.friend.id} onChange={this.handleSelect()}>
+        <select className='selector' value={friend.id} onChange={this.handleSelect()}>
           <option value='' disabled>Select a friend</option>
-          {this.props.friends.map(friend => (
-            <option key={friend.id} value={friend.id}>{friend.name}</option>
+          {this.props.friends.map(oneFriend => (
+            <option key={oneFriend.id} value={oneFriend.id}>{oneFriend.name}</option>
           ))}
         </select>
       </section>
