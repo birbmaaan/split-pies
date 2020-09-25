@@ -34,7 +34,7 @@
 }
 
 .new-comment-form textarea {
-  width: 80%;
+  width: calc(100% - 12px);
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 5px;
