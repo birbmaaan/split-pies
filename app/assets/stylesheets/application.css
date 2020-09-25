@@ -108,6 +108,6 @@ a {
 html, body, .main-app, #root, .dashboard-container {
   height: 100%;
 }
-
+/* 
 @import 'navbar.css';
-@import 'signup.css';
+@import 'signup.css'; */
